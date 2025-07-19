@@ -10,7 +10,7 @@ def cabecalho(request):
     return render(request, 'cabecalho.html')
 
 def rodape(request):
-    return render(request, 'rodape.html')
+    return render(request, 'footer.html')
 
 def main(request):
     return render(request, 'main.html')
