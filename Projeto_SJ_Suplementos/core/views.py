@@ -23,3 +23,6 @@ def main(request):
 def conteudo(request):
     return render(request, 'conteudo.html')
 
+def perfil(request):
+    return render(request, 'perfil.html')
+

@@ -1,11 +1,11 @@
 header {
 
     background-color: blue;
+    color: var(--text_cor);
     justify-content: center;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    color: white;
     display: flex;
     padding: 20px;
     

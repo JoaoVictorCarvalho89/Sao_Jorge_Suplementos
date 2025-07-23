@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  </head>
+
+    <style>
+       .cor1{background-color: chartreuse;}
+       .cor2{background-color: antiquewhite;}
+       .cor3{background-color: aqua;}
+       .cor4{background-color: aquamarine;}
+       .cor5{background-color: black;}
+       .cor6{background-color: blueviolet;}
+       .cor7{background-color: brown;}
+       .cor8{background-color: aliceblue;}
+    </style>
+
+  <body>
+    <div class="container-fluid cor7">
+        <div class="row">
+            <div class="col-12 cor8">
+            <h1>Bootstrap Demo</h1>
+            <p>This is a simple Bootstrap demo page.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 col-xxl-3 cor2">
+                <p>Column 1</p>
+            </div>
+            <div class="col-12 col-md-6 col-xxl-3 cor3">
+                <p>Column 2</p>
+            </div>
+            <div class="col-12 col-md-6 col-xxl-3 cor4">
+                <p>Column 3</p>
+            </div>
+            <div class="col-12 col-md-6 col-xxl-3 cor1">
+                <p>Column 4</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  </body>
+
+</html>
