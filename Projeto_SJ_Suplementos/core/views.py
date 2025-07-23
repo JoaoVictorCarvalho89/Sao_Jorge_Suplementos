@@ -1,5 +1,10 @@
 from django.shortcuts import render
 
+import logging
+
+logger = logging.getLogger('django.template')
+logger.debug("Teste: sistema de log está funcionando!")
+
 def index(request):
     return render(request, 'index.html')
 
@@ -14,4 +19,7 @@ def footer(request):
 
 def main(request):
     return render(request, 'main.html')
+
+def conteudo(request):
+    return render(request, 'conteudo.html')
 
