@@ -9,14 +9,14 @@
   </head>
 
     <style>
-       .cor1{background-color: chartreuse;}
-       .cor2{background-color: antiquewhite;}
-       .cor3{background-color: aqua;}
-       .cor4{background-color: aquamarine;}
-       .cor5{background-color: black;}
-       .cor6{background-color: blueviolet;}
-       .cor7{background-color: brown;}
-       .cor8{background-color: aliceblue;}
+      .cor1{background-color: chartreuse;}
+      .cor2{background-color: antiquewhite;}
+      .cor3{background-color: aqua;}
+      .cor4{background-color: aquamarine;}
+      .cor5{background-color: black;}
+      .cor6{background-color: blueviolet;}
+      .cor7{background-color: brown;}
+      .cor8{background-color: aliceblue;}
     </style>
 
   <body>
