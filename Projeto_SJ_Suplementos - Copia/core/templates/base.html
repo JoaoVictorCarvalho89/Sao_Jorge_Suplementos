@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bem-vindo a São Jorge Suplementos</title>
+        <link rel="icon" type="image/x-icon" href="{% static 'Imagens/favicon/Favicon.ico' %}">
+        <link rel="stylesheet" href="{% static 'base.css' %}">
+        <link rel="stylesheet" href="{% static 'cabecalho.css' %}">
+        <link rel="stylesheet" href="{% static 'footer.css' %}">
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+
+    </head>
+
+    <body>
+
+        {% include 'base/cabecalho.html' %}
+        {% block main %}{% endblock %}
+        {% include 'base/footer.html' %}
+
+    </body>
+
+</html>
