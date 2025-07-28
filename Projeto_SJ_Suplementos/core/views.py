@@ -28,5 +28,3 @@ def perfil(request):
 
 def forms(request):
     return render(request, 'forms.html')
-
-
