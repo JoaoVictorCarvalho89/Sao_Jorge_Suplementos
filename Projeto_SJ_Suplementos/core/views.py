@@ -26,3 +26,7 @@ def conteudo(request):
 def perfil(request):
     return render(request, 'perfil.html')
 
+def forms(request):
+    return render(request, 'forms.html')
+
+
