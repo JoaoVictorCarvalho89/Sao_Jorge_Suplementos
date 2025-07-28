@@ -7,6 +7,11 @@
     --input_color_submit: black;
 }
 
+::selection{
+    background: var(--cor_secundaria);
+    color: var(--text_cor);
+}
+
 body {
     background: linear-gradient(to left, var(--cor_primaria), var(--cor_secundaria));
     font-family: Arial, sans-serif;

@@ -4,6 +4,13 @@
     --text_cor: white; 
 }
 
+::selection{
+
+    background: var(--cor_secundaria);
+    color: black;
+
+}
+
 body {
 
     font-family: Arial, sans-serif;
