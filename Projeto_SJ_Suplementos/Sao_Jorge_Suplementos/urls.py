@@ -20,12 +20,12 @@ from core.views import index, base, cabecalho, footer, main, conteudo, perfil, f
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', forms, name='forms'),
+    path('forms/', forms, name='forms'),
     path('base/', base, name='base'),
     path('main/', main, name='main'),
     path('index/', index, name='index'),
     path('login/', login, name='login'),
-    path('perfil/', perfil, name='perfil'),
+    path('', perfil, name='perfil'),
     path('footer/', footer, name='footer'),
     path('conteudo/', conteudo, name='conteudo'),
     path('cabecalho/', cabecalho, name='cabecalho'),

@@ -1,17 +1,30 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
     <head>
-
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Perfil</title>
-
+        <link rel="stylesheet" href="{% static 'perfil.css' %}?v={% now 'U' %}">
     </head>
 
     <body>
-        <a href="{% url 'index' %}">Link para Index</a>
+        <p><strong>Minha Conta</strong> </p>
+        <div class="container">
+            <div class="perfil-box">
+
+                <p><strong>Nome:</strong> </p>
+                <p><strong>Email:</strong> </p>
+                <p><strong>Data de cadastro:</strong> </p>
+    
+                <div class="acoes">
+                    <a href="#" class="btn">Editar Perfil</a>
+                    <a href="{% url 'index' %}" class="btn sair">Sair</a>
+                </div>
+
+            </div>
+        </div>
     </body>
 
 </html>
