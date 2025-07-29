@@ -122,6 +122,9 @@ STATIC_URL = 'static/'
 
 import logging
 
+import time
+VERSION = str(int(time.time()))
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
