@@ -34,3 +34,6 @@ def login(request):
 
 def recuperar_senha(request):
     return render(request, 'recuperar_senha.html')
+
+def dashboard(request):
+    return render(request, 'dashboard.html')

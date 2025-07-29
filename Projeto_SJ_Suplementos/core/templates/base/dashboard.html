@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h2>Meu Painel</h2>
+            <nav>
+                <a href="#">Início</a>
+                <a href="#">Usuários</a>
+                <a href="#">Vendas</a>
+                <a href="#">Relatórios</a>
+                <a href="{% url 'logout' %}" class="logout">Sair</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h1>Bem-vindo, {{ user.first_name }}!</h1>
+            </header>
+
+            <section class="cards">
+                <div class="card">
+                    <h3>Usuários</h3>
+                    <p>153</p>
+                </div>
+                <div class="card">
+                    <h3>Vendas</h3>
+                    <p>R$ 12.300</p>
+                </div>
+                <div class="card">
+                    <h3>Mensagens</h3>
+                    <p>4 novas</p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

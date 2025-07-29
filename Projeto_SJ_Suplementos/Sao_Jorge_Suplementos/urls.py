@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import index, base, cabecalho, footer, main, conteudo, perfil, forms, login, recuperar_senha
+from core.views import index, base, cabecalho, footer, main, conteudo, perfil, forms, login, recuperar_senha, dashboard
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,9 +25,10 @@ urlpatterns = [
     path('main/', main, name='main'),
     path('index/', index, name='index'),
     path('login/', login, name='login'),
-    path('', perfil, name='perfil'),
+    path('perfil/', perfil, name='perfil'),
     path('footer/', footer, name='footer'),
     path('conteudo/', conteudo, name='conteudo'),
     path('cabecalho/', cabecalho, name='cabecalho'),
     path('recuperar_senha/', recuperar_senha, name='recuperar_senha'),
+    path('', dashboard, name='dashboard')
 ]
