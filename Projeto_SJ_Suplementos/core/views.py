@@ -28,3 +28,9 @@ def perfil(request):
 
 def forms(request):
     return render(request, 'forms.html')
+
+def login(request):
+    return render(request, 'login.html')
+
+def recuperar_senha(request):
+    return render(request, 'recuperar_senha.html')
