@@ -1,13 +1,6 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
+
+{% block dashboard %}
     <div class="dashboard-container">
         <aside class="sidebar">
             <h2>Meu Painel</h2>
@@ -16,13 +9,13 @@
                 <a href="#">Usuários</a>
                 <a href="#">Vendas</a>
                 <a href="#">Relatórios</a>
-                <a href="{% url 'logout' %}" class="logout">Sair</a>
+                <a href="" class="logout">Sair</a>
             </nav>
         </aside>
 
         <main class="main-content">
             <header>
-                <h1>Bem-vindo, {{ user.first_name }}!</h1>
+                <h1>Bem-vindo!</h1>
             </header>
 
             <section class="cards">
@@ -41,5 +34,4 @@
             </section>
         </main>
     </div>
-</body>
-</html>
+{% endblock %}
