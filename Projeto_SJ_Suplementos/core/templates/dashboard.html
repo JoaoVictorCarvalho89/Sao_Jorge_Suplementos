@@ -1,17 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title_dashboard %}<title>Dashboard</title>{% endblock %}
+
+{% block title_dashboard %}
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}?v={% now 'U' %}">
+{% endblock %}
+
 {% block dashboard %}
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{% static 'dashboard.css' %}?v={% now 'U' %}">
-        <link rel="icon" type="image/x-icon" href="{% static 'Imagens/favicon/Favicon.ico' %}">
-    </head>
-
     <main>
-        {% include 'base/barra_lateral.html' %}]
+        {% include 'base/barra_lateral.html' %}
         <main class="main-content">
 
             <strong><p>Dashboard do Usuário</p></strong>
