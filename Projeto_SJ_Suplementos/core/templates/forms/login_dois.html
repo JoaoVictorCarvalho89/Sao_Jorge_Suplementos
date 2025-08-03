@@ -1,17 +1,8 @@
-{% extends 'forms_base.html' %}
+{% extends 'forms/forms_base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
+{% block title_login %}<title>Login</title>{% endblock %}
+{% block login %}
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Login</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="{% static 'Imagens/favicon/Favicon.ico' %}">
-        <link rel="stylesheet" href="{% static 'forms.css' %}?v={% now 'U' %}">
-    </head>
-
-    <body>
         <h1>Login</h1>
         <a href="{% url 'forms' %}">Não tem uma conta? Cadastre-se!</a>
 
@@ -35,6 +26,4 @@
             </p>
         </form>
 
-    </body>
-
-</html>
+{% endblock login %}

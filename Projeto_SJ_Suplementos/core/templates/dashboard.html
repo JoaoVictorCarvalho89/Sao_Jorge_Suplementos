@@ -1,23 +1,20 @@
+{% extends 'base.html' %}
 {% load static %}
-
+{% block title_dashboard %}<title>Dashboard</title>{% endblock %}
 {% block dashboard %}
-    <div class="dashboard-container">
-        <aside class="sidebar">
-            <h2>Meu Painel</h2>
-            <nav>
-                <a href="#">Início</a>
-                <a href="#">Usuários</a>
-                <a href="#">Vendas</a>
-                <a href="#">Relatórios</a>
-                <a href="" class="logout">Sair</a>
-            </nav>
-        </aside>
 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'dashboard.css' %}?v={% now 'U' %}">
+        <link rel="icon" type="image/x-icon" href="{% static 'Imagens/favicon/Favicon.ico' %}">
+    </head>
+
+    <main>
+        {% include 'base/barra_lateral.html' %}]
         <main class="main-content">
-            <header>
-                <h1>Bem-vindo!</h1>
-            </header>
 
+            <strong><p>Dashboard do Usuário</p></strong>
             <section class="cards">
                 <div class="card">
                     <h3>Usuários</h3>
@@ -32,6 +29,8 @@
                     <p>4 novas</p>
                 </div>
             </section>
+
         </main>
-    </div>
+    </main>
+
 {% endblock %}

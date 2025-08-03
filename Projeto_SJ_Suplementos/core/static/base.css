@@ -2,6 +2,7 @@
     --cor_primaria: #70be36; 
     --cor_secundaria: black;
     --text_cor: white; 
+    --text_color3: #535353;
     --input_color: white;
     --input_borda: black;
     --input_color_submit: black;
@@ -14,18 +15,26 @@
     color: var(--cor_selection_text);
 }
 
-body {
-
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to left, var(--cor_primaria), var(--cor_secundaria));
-    color: var(--text_cor);
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    line-height: 1.6;
-    display: flex;
+*{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-
 }
 
+html, body{
+    box-sizing: border-box;
+    min-height: 100vh;
+    overflow: auto;
+    height: 100%;
+}
+
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: var(--text_cor);
+    flex-direction: column;
+    align-items: start;
+    display: flex;
+    width: 100%;
+}

@@ -1,0 +1,28 @@
+{% extends 'forms/forms_base.html' %}
+{% load static %}
+{% block title_recuperar_senha %}<title>Recuperar Senha</title>{% endblock %}
+{% block recuperar_senha %}
+
+        <h1>Troque sua senha</h1>
+
+        <form action="{% url 'perfil' %}" method="post">
+
+            <p>
+                Nome:
+                <input type="email" name="email"/>
+                <br/>
+                Senha:
+                <input type="password" name="senha"/>
+                <br/>
+                Mudar senha:
+                <input type="password" name="senha"/>
+                <br/>
+            </p>
+
+            <p id="psubmit">
+                <input type="submit" value="Mudar senha"/>
+            </p>
+
+        </form>
+
+{% endblock recuperar_senha %}

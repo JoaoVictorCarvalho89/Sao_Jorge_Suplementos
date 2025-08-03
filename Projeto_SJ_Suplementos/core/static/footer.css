@@ -1,5 +1,4 @@
 footer {
-
     background-color: #000000;
     color: var(--text_cor);
     justify-content: center;
@@ -8,5 +7,4 @@ footer {
     text-align: center;
     display: flex;
     padding: 10px;
-    
 }

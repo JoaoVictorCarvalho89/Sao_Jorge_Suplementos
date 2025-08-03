@@ -1,0 +1,50 @@
+.sidebar{
+    background: linear-gradient(to top, var(--cor_primaria), var(--cor_secundaria));
+    color: var(--text_cor);
+    flex-shrink: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.sidebar nav a {
+    transition: background 0.2s;
+    justify-content: center;
+    color: var(--text_cor);
+    text-decoration: none;
+    align-items: center;
+    border-radius: 30px;
+    padding: 1rem 1rem;
+    display: flex;
+}
+
+.sidebar nav a p{
+    transition: background 0.2s;
+    justify-content: center;
+    color: var(--text_cor);
+    text-decoration: none;
+    align-items: center;
+    padding: 12px 0;
+    display: none;
+}
+
+.sidebar nav{
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    height: 100%;
+}
+
+.sidebar nav a:hover{
+    background-color: var(--cor_secundaria);
+    padding: 1rem 1rem;
+}
+
+.sidebar .logout{
+    color: #e74c3c;
+}
+
+.main-content{
+    padding: 30px;
+    flex: 1;
+}
