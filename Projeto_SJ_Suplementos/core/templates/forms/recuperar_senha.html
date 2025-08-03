@@ -1,22 +1,17 @@
+{% extends 'forms/forms_base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Trocar Senha</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="{% static 'Imagens/favicon/Favicon.ico' %}">
-        <link rel="stylesheet" href="{% static 'forms.css' %}?v={% now 'U' %}">
-    </head>
+{% block title_recuperar_senha %}
+    <title>Recuperar Senha</title>
+{% endblock %}
 
-    <body>
+{% block recuperar_senha %}
+
         <h1>Troque sua senha</h1>
 
         <form action="{% url 'perfil' %}" method="post">
-
             <p>
-                Nome:
+                Email:
                 <input type="email" name="email"/>
                 <br/>
                 Senha:
@@ -26,13 +21,12 @@
                 <input type="password" name="senha"/>
                 <br/>
             </p>
-
             <p id="psubmit">
                 <input type="submit" value="Mudar senha"/>
             </p>
-
+            <p>
+                <a href="{% url 'login' %}">Cancelar</a>
+            </p>
         </form>
 
-    </body>
-
-</html>
+{% endblock %}

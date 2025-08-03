@@ -23,15 +23,6 @@ def main(request):
 def perfil(request):
     return render(request, 'perfil.html')
 
-def forms(request):
-    return render(request, 'forms.html')
-
-def login(request):
-    return render(request, 'login.html')
-
-def recuperar_senha(request):
-    return render(request, 'recuperar_senha.html')
-
 def dashboard(request):
     return render(request, 'dashboard.html')
 
@@ -41,12 +32,12 @@ def barra_lateral(request):
 def forms_base(request):
     return render(request, 'forms/forms_base.html')
 
-def forms_dois(request):
-    return render(request, 'forms/forms_dois.html')
+def forms(request):
+    return render(request, 'forms/forms.html')
 
-def login_dois(request):
-    return render(request, 'forms/login_dois.html')
+def login(request):
+    return render(request, 'forms/login.html')
 
-def recuperar_senha_dois(request):
-    return render(request, 'forms/recuperar_senha_dois.html')
+def recuperar_senha(request):
+    return render(request, 'forms/recuperar_senha.html')
 

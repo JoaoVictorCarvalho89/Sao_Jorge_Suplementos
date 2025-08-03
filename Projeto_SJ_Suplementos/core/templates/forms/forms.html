@@ -1,21 +1,16 @@
+{% extends 'forms/forms_base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Cadastre-se</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="{% static 'Imagens/favicon/Favicon.ico' %}">
-        <link rel="stylesheet" href="{% static 'forms.css' %}?v={% now 'U' %}">
-    </head>
+{% block title_forms %}
+    <title>Cadastre-se</title>
+{% endblock %}
 
-    <body>
+{% block forms %}
+
         <h1>Cadastre-se</h1>
         <a href="{% url 'login' %}">Já é cliente? Clique aqui e faça Login!</a>
 
         <form action="{% url 'perfil' %}" method="post">
-
             <p>
                 Nome:
                 <input type="text" name="nome"/>
@@ -32,13 +27,10 @@
                 Data de Nascimento:
                 <input type="date" name="data_nascimento" placeholder="Data de Nascimento"/>
             </p>
-
             <p id="psubmit">
                 <input type="submit" value="Cadastrar"/>
             </p>
-
         </form>
+        
+{% endblock %}
 
-    </body>
-
-</html>

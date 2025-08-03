@@ -1,28 +1,31 @@
 {% extends 'forms/forms_base.html' %}
 {% load static %}
-{% block title_recuperar_senha %}<title>Recuperar Senha</title>{% endblock %}
-{% block recuperar_senha %}
 
-        <h1>Troque sua senha</h1>
+{% block title_login %}
+    <title>Login</title>
+{% endblock %}
+
+{% block login %}
+
+        <h1>Login</h1>
+        <a href="{% url 'forms' %}">Não tem uma conta? Cadastre-se!</a>
 
         <form action="{% url 'perfil' %}" method="post">
 
             <p>
-                Nome:
+                Email:
                 <input type="email" name="email"/>
                 <br/>
                 Senha:
                 <input type="password" name="senha"/>
                 <br/>
-                Mudar senha:
-                <input type="password" name="senha"/>
-                <br/>
             </p>
-
             <p id="psubmit">
-                <input type="submit" value="Mudar senha"/>
+                <input type="submit" value="Login"/>
             </p>
-
+            <p>
+                <a href="{% url 'recuperar_senha' %}">Esqueceu sua senha?</a>
+            </p>
         </form>
 
 {% endblock %}
