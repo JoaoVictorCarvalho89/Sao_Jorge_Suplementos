@@ -3,7 +3,7 @@
         <a href="{% url 'index' %}"><i class="fas fa-home fa-lg"></i> <p>Início</p></a>
         <a href="{% url 'perfil' %}"><i class="fas fa-users fa-lg"></i> <p>Usuários</p></a>
         <a href="#"><i class="fas fa-bell fa-lg"></i> <p>Notificações</p></a>
-        <a href="#"><i class="fas fa-chart-line fa-lg"></i> <p>Dashboard</p></a>
-        <a href="#" class="logout"><i class="fas fa-sign-out-alt fa-lg"></i> <p>Sair</p></a>
+        <a href="{% url 'dashboard' %}"><i class="fas fa-chart-line fa-lg"></i><p>Dashboard</p></a>
+        <a href="{% url 'forms' %}" class="logout"><i class="fas fa-sign-out-alt fa-lg"></i> <p>Sair</p></a>
     </nav>
 </aside>

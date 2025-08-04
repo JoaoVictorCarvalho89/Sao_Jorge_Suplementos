@@ -11,6 +11,7 @@
         <a href="{% url 'login' %}">Já é cliente? Clique aqui e faça Login!</a>
 
         <form action="{% url 'perfil' %}" method="post">
+            {% csrf_token %}
             <p>
                 Nome:
                 <input type="text" name="nome"/>

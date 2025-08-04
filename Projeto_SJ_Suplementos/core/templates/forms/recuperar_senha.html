@@ -10,6 +10,7 @@
         <h1>Troque sua senha</h1>
 
         <form action="{% url 'perfil' %}" method="post">
+            {% csrf_token %}
             <p>
                 Email:
                 <input type="email" name="email"/>

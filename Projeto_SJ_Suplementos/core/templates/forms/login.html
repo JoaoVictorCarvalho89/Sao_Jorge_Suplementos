@@ -11,7 +11,7 @@
         <a href="{% url 'forms' %}">Não tem uma conta? Cadastre-se!</a>
 
         <form action="{% url 'perfil' %}" method="post">
-
+            {% csrf_token %}
             <p>
                 Email:
                 <input type="email" name="email"/>
