@@ -1,16 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
-
-{% block main %}
+{% block title_index %}<title>Página Inicial</title>{% endblock %}
+{% block index %}
 
     <main>
 
+        {% include 'base/barra_lateral.html' %}
         <a href="{% url 'perfil' %}">Link para Perfil</a>
-
-        <p>
-
-            {% lorem 1 b random %}
-
+        <p style="color: black;">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, placeat blanditiis. Ratione quaerat reprehenderit sunt deleniti molestiae reiciendis. Distinctio eos dolore dolores praesentium repudiandae iste repellat atque obcaecati aspernatur reprehenderit.
         </p>
 
     </main>

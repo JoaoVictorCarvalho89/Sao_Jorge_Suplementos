@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_dashboard %}
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}?v={% now 'U' %}">
+{% endblock %}
+
+{% block dashboard %}
+
+    <main>
+        {% include 'base/barra_lateral.html' %}
+        <main class="main-content">
+
+            <strong><p>Dashboard do Usuário</p></strong>
+            <section class="cards">
+                <div class="card">
+                    <h3>Usuários</h3>
+                    <p>153</p>
+                </div>
+                <div class="card">
+                    <h3>Vendas</h3>
+                    <p>R$ 12.300</p>
+                </div>
+                <div class="card">
+                    <h3>Mensagens</h3>
+                    <p>4 novas</p>
+                </div>
+            </section>
+
+        </main>
+    </main>
+
+{% endblock %}

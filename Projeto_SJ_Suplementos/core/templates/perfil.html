@@ -1,15 +1,16 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
 
-    <head>
+{% block title_perfil %}
+    <title>Perfil</title>
+    <link rel="stylesheet" href="{% static 'perfil.css' %}?v={% now 'U' %}">
+{% endblock %}
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Perfil</title>
+{% block perfil %}
 
-    </head>
+    <main>
 
+<<<<<<< HEAD
     <body>
         <a href="{% url 'index' %}">Link para Index</a>
 
@@ -22,5 +23,18 @@
 
 
     </body>
+=======
+        {% include 'base/barra_lateral.html' %}
+        <p><strong>Minha Conta</strong> </p>
+>>>>>>> e30893835c1faadf4afb0edaef4b8f68cd87be25
 
-</html>
+        <div class="container">
+            <div class="perfil-box">
+
+                <h1>Perfil</h1>
+                <strong><p>Email: {{ email_digitado }}</p></strong>
+
+            </div>
+        </div>
+
+{% endblock %}

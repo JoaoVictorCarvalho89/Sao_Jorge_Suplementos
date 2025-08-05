@@ -20,17 +20,24 @@ def footer(request):
 def main(request):
     return render(request, 'main.html')
 
-def conteudo(request):
-    return render(request, 'conteudo.html')
-
 def perfil(request):
     return render(request, 'perfil.html')
 
+def dashboard(request):
+    return render(request, 'dashboard.html')
+
+def barra_lateral(request):
+    return render(request, 'barra_lateral.html')
+
+def forms_base(request):
+    return render(request, 'forms/forms_base.html')
+
 def forms(request):
-    return render(request, 'forms.html')
+    return render(request, 'forms/forms.html')
 
 def login(request):
-    return render(request, 'login.html')
+    return render(request, 'forms/login.html')
 
 def recuperar_senha(request):
-    return render(request, 'recuperar_senha.html')
+    return render(request, 'forms/recuperar_senha.html')
+

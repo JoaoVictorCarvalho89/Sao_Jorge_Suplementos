@@ -1,0 +1,33 @@
+{% extends 'forms/forms_base.html' %}
+{% load static %}
+
+{% block title_recuperar_senha %}
+    <title>Recuperar Senha</title>
+{% endblock %}
+
+{% block recuperar_senha %}
+
+        <h1>Troque sua senha</h1>
+
+        <form action="{% url 'perfil' %}" method="post">
+            {% csrf_token %}
+            <p>
+                Email:
+                <input type="email" name="email" required/>
+                <br/>
+                Senha:
+                <input type="password" name="senha" required/>
+                <br/>
+                Mudar senha:
+                <input type="password" name="nova_senha" required/>
+                <br/>
+            </p>
+            <p id="psubmit">
+                <input type="submit" value="Mudar senha"/>
+            </p>
+            <p>
+                <a href="{% url 'login' %}">Cancelar</a>
+            </p>
+        </form>
+
+{% endblock %}
