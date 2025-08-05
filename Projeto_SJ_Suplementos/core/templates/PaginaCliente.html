@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos - S.J. Suplementos</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      display: flex;
+    }
+
+    /* Menu lateral */
+    .sidebar {
+      width: 60px;
+      background: linear-gradient(to bottom, #000, #4caf50);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 15px;
+    }
+
+    .sidebar i {
+      font-size: 20px;
+      color: white;
+      margin: 20px 0;
+      cursor: pointer;
+    }
+
+    /* Cabeçalho superior */
+    .main-content {
+      flex: 1;
+    }
+
+    header {
+      background: linear-gradient(to right, #2b6b18, #6cbc3b);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 25px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-left a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .contact-button {
+      background-color: white;
+      color: #2b6b18;
+      padding: 7px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Grade de produtos */
+    .products {
+      padding: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .product-card img {
+      max-width: 100px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .product-card h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .product-card p {
+      font-weight: bold;
+      font-size: 16px;
+      color: #333;
+    }
+
+  </style>
+  <!-- Ícones do FontAwesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Menu lateral -->
+  <div class="sidebar">
+    <i class="fas fa-bars"></i>
+    <i class="fas fa-search"></i>
+    <i class="fas fa-map-marker-alt"></i>
+    <i class="fas fa-bell"></i>
+    <i class="fas fa-cog"></i>
+    <i class="fas fa-user-circle"></i>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div class="main-content">
+    <!-- Cabeçalho -->
+    <header>
+      <div class="nav-left">
+        <a href="#">INÍCIO</a>
+        <a href="#">PRODUTOS</a>
+      </div>
+      <button class="contact-button">FALE CONOSCO</button>
+    </header>
+
+    <!-- Produtos -->
+    <section class="products">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/100x100?text=Creatina" alt="Creatina">
+        <h3>Creatina</h3>
+        <p>R$ 90,00</p>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/100x100?text=Whey" alt="Whey Protein">
+        <h3>Whey Protein</h3>
+        <p>R$ 125,00</p>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/100x100?text=Cálcio" alt="Cálcio em Cápsulas">
+        <h3>Cálcio em Cápsulas</h3>
+        <p>R$ 4,00</p>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/100x100?text=Azul" alt="Azul de Metileno">
+        <h3>Azul de Metileno</h3>
+        <p>R$ 4,00</p>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
