@@ -14,19 +14,19 @@
             {% csrf_token %}
             <p>
                 Nome:
-                <input type="text" name="nome"/>
+                <input type="text" name="nome" required/>
                 <br/>
                 Email:
-                <input type="email" name="email"/>
+                <input type="email" name="email" required/>
                 <br/>
                 Senha:
-                <input type="password" name="senha"/>
+                <input type="password" name="senha" required/>
                 <br/>
                 Telefone:
-                <input type="text" name="telefone"/>
+                <input type="text" name="telefone" required/>
                 <br/>
                 Data de Nascimento:
-                <input type="date" name="data_nascimento" placeholder="Data de Nascimento"/>
+                <input type="date" name="data_nascimento" placeholder="Data de Nascimento" required/>
             </p>
             <p id="psubmit">
                 <input type="submit" value="Cadastrar"/>

@@ -21,17 +21,7 @@ def main(request):
     return render(request, 'main.html')
 
 def perfil(request):
-
-    if request.method == 'GET':
-        return render(request, 'perfil.html')
-    
-    email_digitado = request.POST['email']
-
-    informacoes = {
-        'email_digitado':email_digitado,
-    }
-
-    return render(request, 'perfil.html', informacoes)
+    return render(request, 'perfil.html')
 
 def dashboard(request):
     return render(request, 'dashboard.html')
