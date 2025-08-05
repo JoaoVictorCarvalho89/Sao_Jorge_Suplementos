@@ -17,7 +17,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from core.views import index, base, cabecalho, footer, main, perfil, forms, login, recuperar_senha, dashboard, barra_lateral, forms_base, SobreNos
+from core.views import index, base, cabecalho, footer, main, perfil, forms, login, recuperar_senha, dashboard, barra_lateral, forms_base, SobreNos, PaginaCliente
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,4 +34,5 @@ urlpatterns = [
     path('barra_lateral/', barra_lateral, name='barra_lateral'),
     path('recuperar_senha/', recuperar_senha, name='recuperar_senha'),
     path('SobreNos/', SobreNos, name='SobreNos'),
+    path('PaginaCliente/', PaginaCliente, name='PaginaCliente'),
 ]
