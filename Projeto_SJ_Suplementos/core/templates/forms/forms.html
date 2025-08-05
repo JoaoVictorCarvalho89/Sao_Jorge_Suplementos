@@ -10,7 +10,7 @@
         <h1>Cadastre-se</h1>
         <a href="{% url 'login' %}">Já é cliente? Clique aqui e faça Login!</a>
 
-        <form action="{% url 'perfil' %}" method="post">
+        <form action="{% url 'index' %}" method="post">
             {% csrf_token %}
             <p>
                 Nome:

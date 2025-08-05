@@ -8,6 +8,7 @@
         {% block title_dashboard %}{% endblock %}
         {% block title_index %}{% endblock %}
         {% block title_perfil %}{% endblock %}
+        {% block title_about_us %}{% endblock %}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="icon" type="image/x-icon" href="{% static 'Imagens/favicon/Favicon.ico' %}">
         <link rel="stylesheet" href="{% static 'base.css' %}?v={% now 'U' %}">
@@ -23,7 +24,7 @@
         {% include 'base/cabecalho.html' %}
         {% block dashboard %}{% endblock %}
         {% block index %}{% endblock %}
-        {% block perfil %}{% endblock %}
+        {% block about_us %}{% endblock %}
 
     </body>
 

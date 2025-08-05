@@ -1,7 +1,7 @@
 header{
-    background: linear-gradient(to left, var(--cor_primaria), var(--cor_secundaria));
-    justify-content: center;
-    flex-direction: column;
+    background: linear-gradient(to right, var(--cor_terciária), var(--cor_primaria));
+    padding: var(--paddin_cabeçalho);
+    justify-content: space-between;
     color: var(--text_cor);
     align-items: center;
     text-align: center;

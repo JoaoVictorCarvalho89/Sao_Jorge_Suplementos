@@ -1,6 +1,7 @@
 :root {
     --cor_primaria: #70be36; 
     --cor_secundaria: black;
+    --cor_terciária: #2b6b18;
     --text_cor: white; 
     --text_color3: #535353;
     --input_color: white;
@@ -8,6 +9,7 @@
     --input_color_submit: black;
     --cor_selection_background: black;
     --cor_selection_text: white;
+    --paddin_cabeçalho: 15px 20px;
 }
 
 ::selection{

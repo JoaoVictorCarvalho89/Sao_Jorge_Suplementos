@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_about_us %}
+    <title>About_us</title>
+    <link rel="stylesheet" href="{% static 'about_us.css' %}?v={% now 'U' %}">
+{% endblock %}
+
+{% block about_us %}
+
+    <div class="container">
+        <h1>S.J. SUPLEMENTOS</h1>
+
+        <div class="info-section">
+            <h2>Horário de Atendimento</h2>
+            <ul>
+                <li>Domingo: 17h às 23h20</li>
+                <li>Segunda-feira: 15h às 23h20</li>
+                <li>Terça-feira: 15h às 23h20</li>
+                <li>Quarta-feira: 15h às 23h20</li>
+                <li>Quinta-feira: 15h às 23h20</li>
+                <li>Sexta-feira: 15h às 23h20</li>
+                <li>Sábado: 15h às 23h20</li>
+            </ul>
+        </div>
+
+        <div class="info-section">
+            <h2>Endereço</h2>
+            <p class="address">Matadouro Velho, Goianinha – RN, 59.173-000, Brasil</p>
+        </div>
+
+        <div class="info-section">
+            <h2>Proprietário</h2>
+            <p>Jorge Barbosa</p>
+        </div>
+    </div>
+
+{% endblock %}

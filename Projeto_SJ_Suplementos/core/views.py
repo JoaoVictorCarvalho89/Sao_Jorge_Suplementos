@@ -20,9 +20,6 @@ def footer(request):
 def main(request):
     return render(request, 'main.html')
 
-def perfil(request):
-    return render(request, 'perfil.html')
-
 def dashboard(request):
     return render(request, 'dashboard.html')
 
