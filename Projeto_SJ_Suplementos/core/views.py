@@ -41,3 +41,6 @@ def login(request):
 def recuperar_senha(request):
     return render(request, 'forms/recuperar_senha.html')
 
+def SobreNos(request):
+    return render(request, 'SobreNos.html')
+
