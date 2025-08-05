@@ -1,91 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S.J. Suplementos</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
-        }
+{% extends "base.html" %}
+{% load static %}
 
-        header {
-            background: linear-gradient(to right, #2b6b18, #6cbc3b);
-            padding: 15px 20px;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+{% block title_about_us %}
+    <title>Sobre nós</title>
+    <link rel="stylesheet" href="{% static 'about_us.css' %}?v={% now 'U' %}">
+{% endblock %}
 
-        .search-bar {
-            display: flex;
-            align-items: center;
-        }
-
-        .search-bar input[type="text"] {
-            padding: 5px;
-            border: none;
-            border-radius: 4px;
-        }
-
-        .search-bar button {
-            margin-left: 5px;
-            padding: 5px 10px;
-            border: none;
-            background-color: white;
-            color: #333;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .container {
-            padding: 30px 20px;
-        }
-
-        h1 {
-            color: #444;
-        }
-
-        h2 {
-            color: #666;
-            margin-top: 30px;
-        }
-
-        p, li {
-            color: #555;
-            font-size: 16px;
-        }
-
-        .info-section {
-            margin-top: 20px;
-        }
-
-        .info-section strong {
-            display: block;
-            margin-top: 20px;
-            color: #444;
-        }
-
-        .address {
-            text-transform: uppercase;
-            font-size: 14px;
-            color: #777;
-            letter-spacing: 1px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div><strong>S.J. SUPLEMENTOS</strong></div>
-        <div class="search-bar">
-            <input type="text" placeholder="Search">
-            <button>🔍</button>
-        </div>
-    </header>
+{% block about_us %}
 
     <div class="container">
         <h1>S.J. SUPLEMENTOS</h1>
@@ -113,5 +34,5 @@
             <p>Jorge Barbosa</p>
         </div>
     </div>
-</body>
-</html>
+
+{% endblock %}

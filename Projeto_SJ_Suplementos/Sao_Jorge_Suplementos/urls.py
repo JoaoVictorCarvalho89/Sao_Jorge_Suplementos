@@ -17,7 +17,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from core.views import index, base, cabecalho, footer, main, forms, login, recuperar_senha, dashboard, barra_lateral, forms_base, SobreNos, PaginaCliente, About_Us
+from core.views import index, base, cabecalho, footer, main, forms, login, recuperar_senha, dashboard, barra_lateral, forms_base, SobreNos, PaginaCliente
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,12 +27,11 @@ urlpatterns = [
     path('', index, name='index'),
     path('login/', login, name='login'),
     path('footer/', footer, name='footer'),
+    path('SobreNos/', SobreNos, name='SobreNos'),
     path('cabecalho/', cabecalho, name='cabecalho'),
     path('dashboard/', dashboard, name='dashboard'),
     path('forms_base/', forms_base, name='forms_base'),
     path('barra_lateral/', barra_lateral, name='barra_lateral'),
-    path('recuperar_senha/', recuperar_senha, name='recuperar_senha'),
-    path('About_Us/', SobreNos, name='About_Us'),
-    path('SobreNos/', SobreNos, name='SobreNos'),
     path('PaginaCliente/', PaginaCliente, name='PaginaCliente'),
+    path('recuperar_senha/', recuperar_senha, name='recuperar_senha'),
 ]

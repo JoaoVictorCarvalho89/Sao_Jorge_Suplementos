@@ -41,9 +41,6 @@ def recuperar_senha(request):
 def SobreNos(request):
     return render(request, 'SobreNos.html')
 
-def About_Us(request):
-    return render(request, 'About_Us.html')
-
 def PaginaCliente(request):
     return render(request, 'PaginaCliente.html')
 
