@@ -16,6 +16,8 @@
         <link rel="stylesheet" href="{% static 'cabecalho.css' %}?v={% now 'U' %}">
         <link rel="stylesheet" href="{% static 'main.css' %}?v={% now 'U' %}">
         <link rel="stylesheet" href="{% static 'aba_usuario.css' %}?v={% now 'U' %}">
+        <link rel="stylesheet" href="{% static 'sobre_nos.css' %}?v={% now 'U' %}">
+        <link rel="stylesheet" href="{% static 'dashboard.css' %}?v={% now 'U' %}">
     </head>
 
     <body>
@@ -23,7 +25,7 @@
         {% include 'base/cabecalho.html' %}
         {% block dashboard %}{% endblock %}
         {% block index %}{% endblock %}
-        {% block about_us %}{% endblock %}
+        {% block sobre_nos %}{% endblock %}
 
     </body>
 
