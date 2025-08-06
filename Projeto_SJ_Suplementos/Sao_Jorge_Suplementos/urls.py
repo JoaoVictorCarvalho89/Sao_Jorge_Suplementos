@@ -34,4 +34,5 @@ urlpatterns = [
     path('barra_lateral/', barra_lateral, name='barra_lateral'),
     path('PaginaCliente/', PaginaCliente, name='PaginaCliente'),
     path('recuperar_senha/', recuperar_senha, name='recuperar_senha'),
+    
 ]
