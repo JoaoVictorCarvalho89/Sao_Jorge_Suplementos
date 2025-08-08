@@ -1,0 +1,103 @@
+* {
+      margin: 0;
+      padding: 1;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      display: flex;
+    }
+
+    /* Menu lateral */
+    .sidebar {
+      width: 5%;
+      background: linear-gradient(to bottom, #000, #4caf50);
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 15px;
+    }
+
+    .sidebar i {
+      font-size: 20px;
+      color: rgb(15, 36, 223);
+      margin: 20px 0;
+      cursor: pointer;
+    }
+
+    /* Cabeçalho superior */
+    .main-content {
+      flex: 1;
+    }
+
+    header {
+      background: linear-gradient(to right, #2b6b18, #6cbc3b);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 25px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-left a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .contact-button {
+      background-color: rgb(230, 10, 10);
+      color: #2b6b18;
+      padding: 7px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      left: 10px;
+    }
+
+    /* Grade de produtos */
+    .products {
+      padding: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .product-card img {
+      max-width: 100px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .product-card h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .product-card p {
+      font-weight: bold;
+      font-size: 16px;
+      color: #333;
+    }
