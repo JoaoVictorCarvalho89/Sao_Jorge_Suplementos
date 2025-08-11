@@ -1,12 +1,17 @@
 .sidebar{
-    background: linear-gradient(to top, var(--cor_primaria), var(--cor_secundaria));
+    background: linear-gradient(to top, var(--cor_quaternaria), var(--cor_secundaria));
     color: var(--text_cor);
     flex-shrink: 0;
     height: 100%;
-    width: 100%;
+    width: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid black;
+}
+
+.sidebar nav a i:not(#logout-icon){
+    color: var(--color_icon);
 }
 
 .sidebar nav a {
@@ -39,7 +44,7 @@
 }
 
 .sidebar nav a:hover{
-    background-color: var(--cor_secundaria);
+    background-color: var(--cor_selection_background);
     padding: 1rem 1rem;
 }
 

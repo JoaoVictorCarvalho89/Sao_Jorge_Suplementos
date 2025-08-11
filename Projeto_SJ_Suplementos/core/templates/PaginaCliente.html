@@ -10,13 +10,8 @@
   
 {% block pagina_cliente %}
 
-  <!-- Menu lateral -->
-
-  {% include 'base/barra_lateral.html' %}
-  
-
-  <!-- Conteúdo principal -->
-  <div class="main-content">
+  <div class="main-content"> <!-- Conteúdo principal -->
+    {% include 'base/barra_lateral.html' %} <!-- Menu lateral -->
     <!-- Cabeçalho -->
   
       <div class="nav-left">
@@ -28,6 +23,7 @@
 
     <!-- Produtos -->
     <section class="products">
+      
       <div class="product-card">
         <img src="https://via.placeholder.com/100x100?text=Creatina" alt="Creatina">
         <h3>Creatina</h3>
@@ -51,8 +47,10 @@
         <h3>Azul de Metileno</h3>
         <p>R$ 4,00</p>
       </div>
+
     </section>
+
   </div>
-  </body>
+
 {% endblock %}
 

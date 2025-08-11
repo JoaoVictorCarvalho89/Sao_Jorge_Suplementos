@@ -1,0 +1,20 @@
+:root {
+    --cor_primaria: #70be36; 
+    --cor_secundaria: black;
+    --text_cor: white; 
+    --input_color: white;
+    --input_borda: black;
+    --input_color_submit: black;
+    --cor_selection_background: grey;
+    --cor_selection_text: white;
+    --largura_input: 100%;
+    --padding_input: 0.5rem 0;
+    --padding_input_submit: 0.5rem 1rem;
+    --margin_input: 0;
+    --margin_p: 0.5rem 0;
+}
+
+::selection{
+    background: var(--cor_selection_background);
+    color: var(--cor_selection_text);
+}

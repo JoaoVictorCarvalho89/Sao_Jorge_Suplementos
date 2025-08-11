@@ -30,10 +30,10 @@ urlpatterns = [
     path('footer/', footer, name='footer'),
     path('SobreNos/', SobreNos, name='SobreNos'),
     path('cabecalho/', cabecalho, name='cabecalho'),
-    path('dashboard/', dashboard, name='dashboard'),
+    path('', dashboard, name='dashboard'),
     path('forms_base/', forms_base, name='forms_base'),
     path('barra_lateral/', barra_lateral, name='barra_lateral'),
-    path('', PaginaCliente, name='PaginaCliente'),
+    path('PaginaCliente/', PaginaCliente, name='PaginaCliente'),
     path('recuperar_senha/', recuperar_senha, name='recuperar_senha'),
     path('index_react/', TemplateView.as_view(template_name="frontendreact/build/index.html"), name='index_react'),
 

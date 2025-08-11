@@ -14,7 +14,7 @@
     padding: 5px 10px;
     border: none;
     background-color: white;
-    color: #333;
+    color: var(--text_color3);
     border-radius: 4px;
     cursor: pointer;
 }
@@ -24,16 +24,16 @@
 }
 
 h1 {
-    color: #444;
+    color: var(--text_color3);
 }
 
 h2 {
-    color: #666;
+    color: var(--text_color3);
     margin-top: 30px;
 }
 
 p, li {
-    color: #555;
+    color: var(--text_color3);
     font-size: 16px;
 }
 
@@ -44,12 +44,12 @@ p, li {
 .info-section strong {
     display: block;
     margin-top: 20px;
-    color: #444;
+    color: var(--text_color3);
 }
 
 .address {
     text-transform: uppercase;
     font-size: 14px;
-    color: #777;
+    color: var(--text_color3);
     letter-spacing: 1px;
 }
