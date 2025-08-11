@@ -1,38 +1,47 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title_about_us %}
+{% block title_sobre_nos %}
     <title>Sobre Nós</title>
+    <link rel="stylesheet" href="{% static 'CSS/sobre_nos.css' %}?v={% now 'U' %}">
 {% endblock %}
 
 {% block sobre_nos %}
 
-    <div class="container">
-        <h1>S.J. SUPLEMENTOS</h1>
-        <!--<i class="fa-solid fa-arrow-left" style="color: #f3f4f7;"></i>-->
+    <main class="container">
+        
+        <div class="conteiner">
 
-        <div class="info-section">
-            <h2>Horário de Atendimento</h2>
-            <ul>
-                <li>Domingo: 17h às 23h20</li>
-                <li>Segunda-feira: 15h às 23h20</li>
-                <li>Terça-feira: 15h às 23h20</li>
-                <li>Quarta-feira: 15h às 23h20</li>
-                <li>Quinta-feira: 15h às 23h20</li>
-                <li>Sexta-feira: 15h às 23h20</li>
-                <li>Sábado: 15h às 23h20</li>
-            </ul>
+            <h1>S.J. SUPLEMENTOS</h1>
+            <div class="info-section">
+                <h2>Horário de Atendimento</h2>
+                <ul>
+                    <li>Domingo: 17h às 23h20</li>
+                    <li>Segunda-feira: 15h às 23h20</li>
+                    <li>Terça-feira: 15h às 23h20</li>
+                    <li>Quarta-feira: 15h às 23h20</li>
+                    <li>Quinta-feira: 15h às 23h20</li>
+                    <li>Sexta-feira: 15h às 23h20</li>
+                    <li>Sábado: 15h às 23h20</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <h2>Endereço</h2>
+                <p class="address">Matadouro Velho, Goianinha – RN, 59.173-000, Brasil</p>
+            </div>
+
+            <div class="info-section">
+                <h2>Proprietário</h2>
+                <p>Jorge Barbosa</p>
+            </div>
+
+            <div class="info-section">
+                <a href="{% url 'index' %}"><i class="fa fa-arrow-right" style="rotate: 180deg;"></i>Voltar</a>
+            </div>
+
         </div>
 
-        <div class="info-section">
-            <h2>Endereço</h2>
-            <p class="address">Matadouro Velho, Goianinha – RN, 59.173-000, Brasil</p>
-        </div>
-
-        <div class="info-section">
-            <h2>Proprietário</h2>
-            <p>Jorge Barbosa</p>
-        </div>
-    </div>
+    </main>
 
 {% endblock %}

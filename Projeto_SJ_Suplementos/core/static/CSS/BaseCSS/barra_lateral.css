@@ -1,13 +1,13 @@
 .sidebar{
-    background: linear-gradient(to top, var(--cor_quaternaria), var(--cor_secundaria));
-    color: var(--text_cor);
-    flex-shrink: 0;
-    height: 100%;
-    width: 5%;
-    display: flex;
-    align-items: center;
+    background: linear-gradient(to top, var(--cor_primaria), var(--cor_secundaria));
     justify-content: center;
-    border: 1px solid black;
+    color: var(--text_cor);
+    align-items: center;
+    position: fixed;
+    flex-shrink: 0;
+    display: flex;
+    height: 90%;
+    width: 5%;
 }
 
 .sidebar nav a i:not(#logout-icon){

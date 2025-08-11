@@ -4,53 +4,54 @@
 
   {% block title_pagina_cliente %}
   <title>Produtos - S.J. Suplementos</title>
-
+  <link rel="stylesheet" href="{% static 'CSS/pagina_cliente.css' %}?v={% now 'U' %}">
   {% endblock %}
 
-  
+
 {% block pagina_cliente %}
 
-  <div class="main-content"> <!-- Conteúdo principal -->
+  <main> 
     {% include 'base/barra_lateral.html' %} <!-- Menu lateral -->
     <!-- Cabeçalho -->
   
+    <div class="main-content"> <!-- Conteúdo principal -->
+
       <div class="nav-left">
         <a href="#">INÍCIO</a>
         <a href="#">PRODUTOS</a>
-      </div>
-      <button class="contact-button">FALE CONOSCO</button>
-    
+      </div> 
+      <!-- Produtos -->
+      <section class="products">
 
-    <!-- Produtos -->
-    <section class="products">
+        <div class="product-card">
+          <img src="https://via.placeholder.com/100x100?text=Creatina" alt="Creatina">
+          <h3>Creatina</h3>
+          <p>R$ 90,00</p>
+        </div>
+
+        <div class="product-card">
+          <img src="https://via.placeholder.com/100x100?text=Whey" alt="Whey Protein">
+          <h3>Whey Protein</h3>
+          <p>R$ 125,00</p>
+        </div>
+
+        <div class="product-card">
+          <img src="https://via.placeholder.com/100x100?text=Cálcio" alt="Cálcio em Cápsulas">
+          <h3>Cálcio em Cápsulas</h3>
+          <p>R$ 4,00</p>
+        </div>
+
+        <div class="product-card">
+          <img src="https://via.placeholder.com/100x100?text=Azul" alt="Azul de Metileno">
+          <h3>Azul de Metileno</h3>
+          <p>R$ 4,00</p>
+        </div>
+
+      </section>
       
-      <div class="product-card">
-        <img src="https://via.placeholder.com/100x100?text=Creatina" alt="Creatina">
-        <h3>Creatina</h3>
-        <p>R$ 90,00</p>
-      </div>
+    </div>
 
-      <div class="product-card">
-        <img src="https://via.placeholder.com/100x100?text=Whey" alt="Whey Protein">
-        <h3>Whey Protein</h3>
-        <p>R$ 125,00</p>
-      </div>
-
-      <div class="product-card">
-        <img src="https://via.placeholder.com/100x100?text=Cálcio" alt="Cálcio em Cápsulas">
-        <h3>Cálcio em Cápsulas</h3>
-        <p>R$ 4,00</p>
-      </div>
-
-      <div class="product-card">
-        <img src="https://via.placeholder.com/100x100?text=Azul" alt="Azul de Metileno">
-        <h3>Azul de Metileno</h3>
-        <p>R$ 4,00</p>
-      </div>
-
-    </section>
-
-  </div>
+  </main>
 
 {% endblock %}
 

@@ -12,6 +12,8 @@
     --cor_selection_text: white;
     --paddin_cabeçalho: 15px 20px;
     --color_icon: white;
+    --card_bg: #535353;
+    --margin_top_sobre_nos: 30px;
 }
 
 ::selection{

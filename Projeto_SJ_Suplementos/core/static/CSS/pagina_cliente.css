@@ -1,10 +1,13 @@
     /* Cabeçalho superior */
     .main-content {
-      border: 1px solid blue;
       display: flex;
       justify-content: center;
       height: 100%;
       width: 100%;
+    }
+
+    .content{
+      flex: 1;
     }
 
     .nav-left {
@@ -19,17 +22,6 @@
       font-weight: bold;
       font-size: 14px;
       letter-spacing: 1px;
-    }
-
-    .contact-button {
-      background-color: rgb(230, 10, 10);
-      color: var(--text_cor);
-      padding: 7px 15px;
-      border-radius: 20px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      left: 10px;
     }
 
     /* Grade de produtos */

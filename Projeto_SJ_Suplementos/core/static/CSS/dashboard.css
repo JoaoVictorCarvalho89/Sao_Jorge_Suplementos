@@ -1,8 +1,3 @@
-
-:root {
-    --card_bg: #535353;
-}
-
 .dashboard-container .main-content strong p{
     color: var(--text_color3);
 }
