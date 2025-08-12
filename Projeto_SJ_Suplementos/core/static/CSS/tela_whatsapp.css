@@ -2,6 +2,8 @@
     background-color: var(--background_color);
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 .main-content h1 {
@@ -17,9 +19,10 @@
     color: var(--text_color2);
 }
 
-.quadro-right, .quadro-left {
+.quadro-right, .quadro-left{
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     justify-content: start;
 }
@@ -41,19 +44,7 @@
 
 .quadro-left{
     width: 50%;
-}
-
-.quadro-left div{
-    height: 25%;
-    width: 100%;
-}
-
-.quadro-left .titulo h1{
-    font-size: 30px;
-}
-
-.quadro-left .descricao p{
-    margin-top: 10px;
+    height: 50%;
 }
 
 .quadro-left .titulo h1, .quadro-left .descricao p{
@@ -61,23 +52,35 @@
 }
 
 .quadro-left .titulo{
+    width: 70%;
+    height: 50%;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
 }
 
+.quadro-left .titulo h1{
+    font-size: 30px;
+}
+
 .quadro-left .titulo img {
-    width: 20%;
+    width: 30%;
     height: 100%;
     border-radius: 50%;
     margin-right: 10px;
     border: 3px solid var(--cor_primaria);
 }
 
-.quadro-left .descricao strong p{
+.quadro-left .descricao{
     width: 70%;
+    height: 25%;
+    line-height: 1.4;
+}
+
+.quadro-left .descricao strong p{
     font-size: 20px;
 }
-.quadro-left .descricao{
-    line-height: 1.4;
+
+.quadro-left .descricao p{
+    margin-top: 10px;
 }

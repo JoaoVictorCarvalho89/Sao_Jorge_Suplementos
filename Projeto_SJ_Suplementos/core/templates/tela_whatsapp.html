@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title_whatsapp %}
+    <title>Fale conosco!</title>
+    <link rel="stylesheet" href="{% static 'CSS/tela_whatsapp.css' %}">
+{% endblock  %}
+
+{% block whatsapp %}
+    <main>
+        {% include 'base/barra_lateral.html' %}
+        <div class="main-content">
+
+            <div class="quadro-left">
+
+                <div class="titulo">
+                    <img src="{% static 'Imagens/Logo_São_Jorge_preta.png' %}" alt="">
+                    <strong>
+                        <h1>Fale com a gente pelo Whatsapp!</h1>
+                    </strong>
+                </div>
+                <div class="descricao">
+                    <strong>
+                        <p>Estamos disponíveis para tirar dúvidas, fazer orçamentos ou conversar sobre o que você precisar.</p>
+                        <p>Atendimento de segunda a sexta, das 8h ás 18hr.</p>
+                    </strong>
+                </div>
+
+            </div>
+
+            <div class="quadro-right">
+                <h2>São Jorge Suplementos</h2>
+                <p>Contato do WhatsApp: (84) 9407-6249</p>
+                <img src="{% static 'Imagens/QR_code_WhatsApp.jpg' %}" alt="">
+            </div>
+
+        </div>
+    </main>
+{% endblock %}

@@ -22,7 +22,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 35%;
+    width: auto;
 }
 
 .contact-button div{
@@ -44,6 +44,7 @@ header{
     justify-content: center;
     align-items: center;
     padding: 5px 5px;
+    margin-right: 10px;
 }
 
 .search-bar {
