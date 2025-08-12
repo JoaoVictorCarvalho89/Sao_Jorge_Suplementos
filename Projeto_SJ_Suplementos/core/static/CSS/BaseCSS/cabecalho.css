@@ -22,7 +22,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 30%;
+    width: 35%;
 }
 
 .contact-button div{
@@ -35,12 +35,15 @@ header{
 .contact-button {
     background-color: rgb(230, 10, 10);
     color: var(--text_cor);
-    padding: 7px 15px;
     border-radius: 20px;
     font-weight: bold;
-    border: none;
     cursor: pointer;
-    left: 10px;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 5px;
 }
 
 .search-bar {

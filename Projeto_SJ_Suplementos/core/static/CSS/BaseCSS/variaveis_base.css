@@ -1,10 +1,13 @@
 :root {
+    --background_color: white;
     --cor_primaria: #70be36; 
     --cor_secundaria: black;
     --cor_terciária: #2b6b18;
     --cor_quaternaria: #4caf50;
     --text_cor: white; 
+    --text_color2: black;
     --text_color3: grey;
+    --text_color4: #70be36;
     --cor_selection_background: grey;
     --input_color: white;
     --input_borda: black;

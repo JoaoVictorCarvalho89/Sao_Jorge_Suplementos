@@ -17,7 +17,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from core.views import index, base, cabecalho, footer, main, forms, login, recuperar_senha, dashboard, barra_lateral, forms_base, SobreNos, PaginaCliente
+from core.views import index, base, cabecalho, footer, main, forms, login, recuperar_senha, dashboard, barra_lateral, forms_base, SobreNos, PaginaCliente, tela_whatsapp
 from django.views.generic import TemplateView
 
 urlpatterns = [
@@ -30,7 +30,8 @@ urlpatterns = [
     path('footer/', footer, name='footer'),
     path('SobreNos/', SobreNos, name='SobreNos'),
     path('cabecalho/', cabecalho, name='cabecalho'),
-    path('', dashboard, name='dashboard'),
+    path('', tela_whatsapp, name='tela_whatsapp'),
+    path('dashboard/', dashboard, name='dashboard'),
     path('forms_base/', forms_base, name='forms_base'),
     path('barra_lateral/', barra_lateral, name='barra_lateral'),
     path('PaginaCliente/', PaginaCliente, name='PaginaCliente'),
