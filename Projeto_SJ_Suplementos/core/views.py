@@ -44,8 +44,5 @@ def SobreNos(request):
 def PaginaCliente(request):
     return render(request, 'PaginaCliente.html')
 
-def index_react(request):
-    return render(request, 'frontendreact/build/index.html')
-
 def tela_whatsapp(request):
     return render(request, 'tela_whatsapp.html')
