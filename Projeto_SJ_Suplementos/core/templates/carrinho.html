@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title_carrinho %}
+    <title>Carrinho</title>
+    <link rel="stylesheet" href="{% static 'CSS/carrinho.css' %}?v={% now 'U' %}">
+{% endblock %}
+
+{% block carrinho %}
+    <main>
+        {% include 'base/barra_lateral.html' %}
+    </main>
+{% endblock %}

@@ -46,3 +46,6 @@ def PaginaCliente(request):
 
 def tela_whatsapp(request):
     return render(request, 'tela_whatsapp.html')
+
+def carrinho(request):
+    return render(request, 'carrinho.html')

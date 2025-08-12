@@ -1,4 +1,19 @@
-main div a{
+main .conteiner a{
     color: blue;
     text-decoration: none;
+}
+
+main .conteiner p{
+    color: black;
+}
+
+main .conteiner{
+    margin-left: 2%;
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 95%;
+    height: 100%;
+    border: 1px solid #ccc;
 }

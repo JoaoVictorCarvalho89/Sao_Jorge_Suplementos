@@ -1,9 +1,5 @@
-.dashboard-container .main-content strong p{
+.main-content strong p{
     color: var(--text_color3);
-}
-
-.dashboard-container{
-    width: 100%;
 }
 
 .main-content{
@@ -17,7 +13,8 @@
 
 .cards{
     border: black 1px solid;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     display: flex;
     padding: 20px;
     width: 100%;
@@ -25,7 +22,7 @@
 }
 
 .card{
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: -5px 10px 0px lightgrey;
     background-color: var(--card_bg);
     border-radius: 10px;
     min-width: 200px;
