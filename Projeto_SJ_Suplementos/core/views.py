@@ -49,3 +49,6 @@ def tela_whatsapp(request):
 
 def carrinho(request):
     return render(request, 'carrinho.html')
+
+def teste(request):
+    return render(request, 'teste.html')
