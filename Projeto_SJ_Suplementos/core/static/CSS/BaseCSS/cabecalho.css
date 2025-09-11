@@ -24,8 +24,7 @@ header{
 }
 .contact-button {
     font-family: 'Times New Roman', sans-serif, Arial;
-    background-color: rgb(230, 10, 10);
-    color: var(--text_cor);
+    background-color: white;
     border-radius: 20px;
     font-weight: bold;
     cursor: pointer;
@@ -36,6 +35,9 @@ header{
     align-items: center;
     padding: 7px 7px;
     margin-right: 10px;
+}
+.contact-button p{
+    color: var(--text_color2);
 }
 .contact-button div, .sobre-nos-button div{
     display: flex;
