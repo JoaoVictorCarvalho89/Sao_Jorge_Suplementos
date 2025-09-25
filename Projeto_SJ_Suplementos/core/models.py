@@ -1,3 +1,15 @@
 from django.db import models
 
-# Create your models here.
+class Categoria(models.Model):
+    nome = models.CharField('Nome', max_length=50)
+
+class Projeto(models.Model):
+    titulo = models.CharField('Título', max_length=100)
+    descricao = models.TextField('Descrição')
+    categoria = models.ForeignKey(Categoria, on_delete=models.PROTECT)
+
+class Aluno(models.Model):
+    matricula = models.CharField('Matrícula', max_length=14, prymary_key=True)
+    nome = models.TextField('Nome')
+    email = models.TextField('Email')
+    projetos = models.ForeignKey(Projeto, on_delete=models.PROTECT, related_name='projetos')
