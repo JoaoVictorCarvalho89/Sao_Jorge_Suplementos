@@ -52,3 +52,6 @@ def carrinho(request):
 
 def teste(request):
     return render(request, 'teste.html')
+
+def categorias(request):
+    return render(request, 'categorias.html')
