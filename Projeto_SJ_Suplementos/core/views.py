@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Area
 
 import logging
 
@@ -55,3 +56,10 @@ def teste(request):
 
 def categorias(request):
     return render(request, 'categorias.html')
+
+def areas(request):
+    areas = Area = Area.objects.all()
+    contexto = {
+        'areas': areas
+    }
+    return render(request, 'areas.html', contexto)
