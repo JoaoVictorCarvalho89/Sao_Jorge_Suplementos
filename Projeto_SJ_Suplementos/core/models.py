@@ -9,7 +9,7 @@ class Projeto(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete=models.PROTECT)
 
 class Aluno(models.Model):
-    matricula = models.CharField('Matrícula', max_length=14, prymary_key=True)
+    matricula = models.CharField('Matrícula', max_length=14, primary_key=True)
     nome = models.TextField('Nome')
     email = models.TextField('Email')
     projetos = models.ForeignKey(Projeto, on_delete=models.PROTECT, related_name='projetos')
