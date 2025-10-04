@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Area
 
 import logging
 
@@ -52,3 +53,13 @@ def carrinho(request):
 
 def teste(request):
     return render(request, 'teste.html')
+
+def categorias(request):
+    return render(request, 'categorias.html')
+
+def areas(request):
+    areas = Area = Area.objects.all()
+    contexto = {
+        'areas': areas
+    }
+    return render(request, 'areas.html', contexto)
