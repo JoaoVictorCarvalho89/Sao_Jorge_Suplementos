@@ -58,7 +58,7 @@ def categorias(request):
     return render(request, 'categorias.html')
 
 def areas(request):
-    areas = Area = Area.objects.all()
+    areas = Area.objects.all()
     contexto = {
         'areas': areas
     }
