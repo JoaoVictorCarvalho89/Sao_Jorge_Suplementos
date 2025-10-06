@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Área</title>
 </head>
 <body>
-    <h1>Área</h1>
-    <p>Cadastrar</p>
 
-    <p>Lista de Área</p>
-    <ul>
-        {% for area in areas %}
-            <li>{{ area.nome_area }}</li>
-        {% endfor %}
-    </ul>
+    <h1>Gerenciador de Área</h1>
+    <a href="{% url 'area_cadastro' %}">Cadastrar Áreas</a>
+    <p>Lista de áreas</p>
+    {% for area in lista_areas %}
+        <p>{{ area.nome }}</p>
+        {% empty %}
+        <p>Nenhuma área cadastrada</p>
+    {% endfor %}
+    
 </body>
 </html>

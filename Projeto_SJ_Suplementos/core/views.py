@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Area
+from .forms import AreaForm
 
 import logging
 
@@ -60,6 +61,13 @@ def categorias(request):
 def areas(request):
     areas = Area.objects.all()
     contexto = {
-        'areas': areas
+        'lista_areas': areas
     }
     return render(request, 'areas.html', contexto)
+
+def area_cadastro(request):
+    form = AreaForm(request.POST or None)
+    contexto = {
+        'form': form
+    }
+    return render(request, 'area_cadastro.html', contexto)
