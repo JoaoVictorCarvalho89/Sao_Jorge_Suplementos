@@ -76,14 +76,17 @@ def area_cadastro(request):
     return render(request, 'area_cadastro.html', contexto)
 
 def area_editar(request, id):
-    area = Area.objects.get(id=id)
+    area = Area.objects.get(pk=id)
     form = AreaForm(request.POST or None, instance=area)
+    
     if form.is_valid():
         form.save()
         return redirect('areas')
+    
     contexto = {
         'form': form
     }
+    
     return render(request, 'area_cadastro.html', contexto)
 
 def area_remover(request, id):
