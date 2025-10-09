@@ -8,10 +8,10 @@
 <body>
 
     <h1>Cadastro de Áreas</h1>
-    <form action="post">
+    <form method="post">
         {%csrf_token%}
-        {{ form.as_p }}
-        
+        {{ form }}
+        <p><input type="submit" value="Enviar"/></p>
     </form>
 
 </body>

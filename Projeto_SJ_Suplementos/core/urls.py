@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include 
-from .views import index, base, cabecalho, footer, main, forms, login, recuperar_senha, dashboard, barra_lateral, forms_base, SobreNos, PaginaCliente, tela_whatsapp, carrinho, teste, categorias, areas, area_cadastro
+from .views import index, base, cabecalho, footer, main, forms, login, recuperar_senha, dashboard, barra_lateral, forms_base, SobreNos, PaginaCliente, tela_whatsapp, carrinho, teste, categorias, areas, area_cadastro, area_remover, area_editar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -18,6 +18,8 @@ urlpatterns = [
     path('dashboard/', dashboard, name='dashboard'),
     path('categorias/', categorias, name='categorias'),
     path('forms_base/', forms_base, name='forms_base'),
+    path('area_editar/', area_editar, name='area_editar'),
+    path('area_remover/<int:id>/', area_remover, name='area_remover'),
     path('tela_whatsapp/', tela_whatsapp, name='tela_whatsapp'),
     path('barra_lateral/', barra_lateral, name='barra_lateral'),
     path('PaginaCliente/', PaginaCliente, name='PaginaCliente'),
