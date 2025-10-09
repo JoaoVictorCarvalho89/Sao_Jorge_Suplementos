@@ -6,7 +6,7 @@ class AreaForm(forms.ModelForm):
         model = Area
         fields = ['nome']
         
-"""class InstrutorForm(forms.ModelForm):
+class InstrutorForm(forms.ModelForm):
     class Meta:
         model = Instrutor
         fields = ['nome']
@@ -14,4 +14,4 @@ class AreaForm(forms.ModelForm):
 class PublicoForm(forms.ModelForm):
     class Meta:
         model = Publico
-        fields = ['nome']"""
+        fields = ['nome']

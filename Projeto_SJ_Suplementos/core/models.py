@@ -5,7 +5,7 @@ from django.db import models
 """%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"""
 
 class Area (models.Model):
-    nome = models.CharField('Area', max_length=50)
+    nome = models.CharField('Nome', max_length=50)
     
 class Publico (models.Model):
     nome = models.CharField('Publico', max_length=50)
