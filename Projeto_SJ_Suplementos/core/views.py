@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Area
-from .forms import AreaForm
+from .models import Area, Publico, Instrutor
+from .forms import AreaForm, PublicoForm, InstrutorForm
 
 import logging
 
@@ -93,3 +93,73 @@ def area_remover(request, id):
     area = Area.objects.get(pk=id)
     area.delete()
     return redirect('areas')
+
+def publicos(request):
+    publico = Publico.objects.all()
+    contexto = {
+        'lista_publicos': publico
+    }
+    return render(request, 'publicos.html', contexto)
+
+def publico_cadastro(request):
+    form = PublicoForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('publicos')
+    contexto = {
+        'form': form
+    }
+    return render(request, 'publico_cadastro.html', contexto)
+
+def publico_editar(request, id):
+    publico = Publico.objects.get(pk=id)
+    form = PublicoForm(request.POST or None, instance=publico)
+    
+    if form.is_valid():
+        form.save()
+        return redirect('publicos')
+    
+    contexto = {
+        'form': form
+    }
+    return render(request, 'publico_cadastro.html', contexto)
+
+def publico_remover(request, id):
+    publico = Publico.objects.get(pk=id)
+    publico.delete()
+    return redirect('publicos')
+
+def instrutores(request):
+    instrutor = Instrutor.objects.all()
+    contexto = {
+        'lista_instrutor': instrutor
+    }
+    return render(request, 'instrutores.html', contexto)
+
+def instrutor_cadastro(request):
+    form = InstrutorForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('instrutores')
+    contexto = {
+        'form': form
+    }
+    return render(request, 'instrutor_cadastro.html', contexto)
+
+def instrutor_editar(request, id):
+    instrutor = Instrutor.objects.get(pk=id)
+    form = InstrutorForm(request.POST or None, instance=instrutor)
+    
+    if form.is_valid():
+        form.save()
+        return redirect('instrutores')
+    
+    contexto = {
+        'form': form
+    }
+    return render(request, 'instrutor_cadastro.html', contexto)
+
+def instrutor_remover(request, id):
+    instrutor = Instrutor.objects.get(pk=id)
+    instrutor.delete()
+    return redirect('instrutores')

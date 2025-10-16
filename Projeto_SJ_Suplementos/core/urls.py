@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include 
-from .views import index, base, cabecalho, footer, main, forms, login, recuperar_senha, dashboard, barra_lateral, forms_base, SobreNos, PaginaCliente, tela_whatsapp, carrinho, teste, categorias, areas, area_cadastro, area_remover, area_editar
+from .views import index, base, cabecalho, footer, main, forms, login, recuperar_senha, dashboard, barra_lateral, forms_base, SobreNos, PaginaCliente, tela_whatsapp, carrinho, teste, categorias, areas, area_cadastro, area_remover, area_editar, publicos, publico_cadastro, publico_editar, publico_remover, instrutores, instrutor_cadastro, instrutor_editar, instrutor_remover
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -12,17 +12,25 @@ urlpatterns = [
     path('forms/', forms, name='forms'),
     path('login/', login, name='login'),
     path('footer/', footer, name='footer'),
+    path('', publicos, name='publicos'),
     path('carrinho', carrinho, name='carrinho'),
     path('SobreNos/', SobreNos, name='SobreNos'),
+    path('instrutores/', instrutores, name='instrutores'),
     path('cabecalho/', cabecalho, name='cabecalho'),
     path('dashboard/', dashboard, name='dashboard'),
     path('categorias/', categorias, name='categorias'),
     path('forms_base/', forms_base, name='forms_base'),
     path('area_cadastro', area_cadastro, name='area_cadastro'),
-    path('', tela_whatsapp, name='tela_whatsapp'),
+    path('tela_whatsapp', tela_whatsapp, name='tela_whatsapp'),
     path('barra_lateral/', barra_lateral, name='barra_lateral'),
     path('PaginaCliente/', PaginaCliente, name='PaginaCliente'),
     path('area_editar/<int:id>/', area_editar, name='area_editar'),
     path('area_remover/<int:id>/', area_remover, name='area_remover'),
+    path('instrutor_editar/<int:id>/', instrutor_editar, name='instrutor_editar'),
+    path('instrutor_remover/<int:id>/', instrutor_remover, name='instrutor_remover'),
+    path('publico_editar/<int:id>/', publico_editar, name='publico_editar'),
+    path('publico_remover/<int:id>/', publico_remover, name='publico_remover'),
     path('recuperar_senha/', recuperar_senha, name='recuperar_senha'),
+    path('publico_cadastro/', publico_cadastro, name='publico_cadastro'),
+    path('instrutor_cadastro/', instrutor_cadastro, name='instrutor_cadastro'),
 ]
