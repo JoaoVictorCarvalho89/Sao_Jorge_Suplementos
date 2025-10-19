@@ -1,4 +1,11 @@
 from django.shortcuts import render, redirect
+""" Imports de São Jorge Suplementos """
+
+from .models import Produto
+from .forms import ProdutoForm
+
+""" Imports de Bruno Gomes """
+
 from .models import Area, Publico, Instrutor
 from .forms import AreaForm, PublicoForm, InstrutorForm
 
@@ -66,14 +73,14 @@ def teste(request):
 """CRUD ÁREAS, PÚBLICOS E INSTRUTORES (SOMENTE AULAS DE BRUNO GOMES)"""
 
 def categorias(request):
-    return render(request, 'categorias.html')
+    return render(request, 'Bruno_Gomes/categorias.html')
 
 def areas(request):
     areas = Area.objects.all()
     contexto = {
         'lista_areas': areas
     }
-    return render(request, 'areas.html', contexto)
+    return render(request, 'Bruno_Gomes/areas.html', contexto)
 
 def area_cadastro(request):
     form = AreaForm(request.POST or None)
@@ -83,7 +90,7 @@ def area_cadastro(request):
     contexto = {
         'form': form
     }
-    return render(request, 'area_cadastro.html', contexto)
+    return render(request, 'Bruno_Gomes/area_cadastro.html', contexto)
 
 def area_editar(request, id):
     area = Area.objects.get(pk=id)
@@ -96,8 +103,8 @@ def area_editar(request, id):
     contexto = {
         'form': form
     }
-    
-    return render(request, 'area_cadastro.html', contexto)
+
+    return render(request, 'Bruno_Gomes/area_cadastro.html', contexto)
 
 def area_remover(request, id):
     area = Area.objects.get(pk=id)
@@ -109,7 +116,7 @@ def publicos(request):
     contexto = {
         'lista_publicos': publico
     }
-    return render(request, 'publicos.html', contexto)
+    return render(request, 'Bruno_Gomes/publicos.html', contexto)
 
 def publico_cadastro(request):
     form = PublicoForm(request.POST or None)
@@ -119,7 +126,7 @@ def publico_cadastro(request):
     contexto = {
         'form': form
     }
-    return render(request, 'publico_cadastro.html', contexto)
+    return render(request, 'Bruno_Gomes/publico_cadastro.html', contexto)
 
 def publico_editar(request, id):
     publico = Publico.objects.get(pk=id)
@@ -132,7 +139,7 @@ def publico_editar(request, id):
     contexto = {
         'form': form
     }
-    return render(request, 'publico_cadastro.html', contexto)
+    return render(request, 'Bruno_Gomes/publico_cadastro.html', contexto)
 
 def publico_remover(request, id):
     publico = Publico.objects.get(pk=id)
@@ -144,7 +151,7 @@ def instrutores(request):
     contexto = {
         'lista_instrutor': instrutor
     }
-    return render(request, 'instrutores.html', contexto)
+    return render(request, 'Bruno_Gomes/instrutores.html', contexto)
 
 def instrutor_cadastro(request):
     form = InstrutorForm(request.POST or None)
@@ -154,7 +161,7 @@ def instrutor_cadastro(request):
     contexto = {
         'form': form
     }
-    return render(request, 'instrutor_cadastro.html', contexto)
+    return render(request, 'Bruno_Gomes/instrutor_cadastro.html', contexto)
 
 def instrutor_editar(request, id):
     instrutor = Instrutor.objects.get(pk=id)
@@ -167,7 +174,7 @@ def instrutor_editar(request, id):
     contexto = {
         'form': form
     }
-    return render(request, 'instrutor_cadastro.html', contexto)
+    return render(request, 'Bruno_Gomes/instrutor_cadastro.html', contexto)
 
 def instrutor_remover(request, id):
     instrutor = Instrutor.objects.get(pk=id)

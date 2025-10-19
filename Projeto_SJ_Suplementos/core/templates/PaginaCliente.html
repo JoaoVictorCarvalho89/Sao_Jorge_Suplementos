@@ -1,24 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
   {% block title_pagina_cliente %}
   <title>Produtos - S.J. Suplementos</title>
   <link rel="stylesheet" href="{% static 'CSS/pagina_cliente.css' %}?v={% now 'U' %}">
   {% endblock %}
 
-
 {% block pagina_cliente %}
 
   <main> 
+    
     {% include 'base/barra_lateral.html' %} <!-- Menu lateral -->
-  
     <div class="main-content"> <!-- Conteúdo principal -->
 
-      <div class="nav-left">
-        <a href="#">INÍCIO</a>
-        <a href="#">PRODUTOS</a>
-      </div> 
       <!-- Produtos -->
       <section class="products">
 
