@@ -2,11 +2,12 @@
 
     .main-content {
       border: 2px solid var(--text_color2);
-     
+      margin-left: 5%;
     }
 
     /* Grade de produtos */
     .products {
+      border: 2px solid red;
       background-color: var(--text_color4);
       width: 100%;
       height: auto;
