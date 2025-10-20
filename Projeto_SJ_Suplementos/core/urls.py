@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include 
-from .views import index, base,  forms, login, recuperar_senha, dashboard,  forms_base, SobreNos, tela_whatsapp, carrinho, PaginaCliente, teste #Páginas principais
+from .views import index, base,   SobreNos, tela_whatsapp, carrinho, PaginaCliente, teste #Páginas principais
+
+from .views import forms, login, recuperar_senha, dashboard, forms_base #Formulários 
 from .views import produto_cadastro, produto_editar, produto_remover #Crud de Produtos
 from .views import cabecalho, footer, main, barra_lateral #Elementos de Layout
 
