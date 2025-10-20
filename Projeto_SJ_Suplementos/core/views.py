@@ -28,14 +28,46 @@ def dashboard(request):
 def SobreNos(request):
     return render(request, 'SobreNos.html')
 
-def PaginaCliente(request):
-    return render(request, 'PaginaCliente.html')
-
 def tela_whatsapp(request):
     return render(request, 'tela_whatsapp.html')
 
 def carrinho(request):
     return render(request, 'carrinho.html')
+
+def PaginaCliente(request):
+    produtos = Produto.objects.all()
+    contexto = {
+        'lista_produtos': produtos
+    }
+    return render(request, 'PaginaCliente.html', contexto)
+
+def produto_cadastro(request):
+    form = ProdutoForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('PaginaCliente')
+    contexto = {
+        'form': form
+    }
+    return render(request, 'CRUD/produto_cadastro.html', contexto)
+
+def produto_editar(request, id):
+    produto = Produto.objects.get(pk=id)
+    form = ProdutoForm(request.POST or None, instance=produto)
+    
+    if form.is_valid():
+        form.save()
+        return redirect('PaginaCliente')
+    
+    contexto = {
+        'form': form
+    }
+    return render(request, 'CRUD/produto_cadastro.html', contexto)
+
+def produto_remover(request, id):
+    produto = Produto.objects.get(pk=id)
+    produto.delete()
+    return redirect('PaginaCliente')
 
 """Formulários"""
 

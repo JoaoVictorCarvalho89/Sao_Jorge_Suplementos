@@ -16,28 +16,27 @@
       <!-- Produtos -->
       <section class="products">
 
-        <div class="product-card">
-          <img src="https://via.placeholder.com/100x100?text=Creatina" alt="Creatina">
-          <h3>Creatina</h3>
-          <p>R$ 90,00</p>
+        <div class="product-card_cadastro">
+          <img src="{% static 'Imagens/Produtos_genéricos.jpg' %}" alt="Cadastre um produto">
+          <strong><a href="{% url 'produto_cadastro' %}">Cadastre um produto</a></strong>
         </div>
 
+        {% for produto in lista_produtos %}
+          <div class="product-card">
+            <img src="{% static 'Imagens/Produtos_genéricos.jpg' %}" alt="Cadastre um produto">
+            <h3>{{ produto.nome }}</h3>
+            <p>{{ produto.descricao }}</p>
+            <p>R$ {{ produto.preco }}</p>
+            <p><a href="{% url 'produto_editar' produto.id %}">EDITAR</a> | <a href="{% url 'produto_remover' produto.id %}">APAGAR</a></p>
+          </div>
+          {% empty %}
+          <p>Nenhum produto cadastrado</p>
+        {% endfor %}
+
         <div class="product-card">
-          <img src="https://via.placeholder.com/100x100?text=Whey" alt="Whey Protein">
+          <img src="{% static 'Imagens/creatina250g.webp' %}" alt="Whey Protein">
           <h3>Whey Protein</h3>
           <p>R$ 125,00</p>
-        </div>
-
-        <div class="product-card">
-          <img src="https://via.placeholder.com/100x100?text=Cálcio" alt="Cálcio em Cápsulas">
-          <h3>Cálcio em Cápsulas</h3>
-          <p>R$ 4,00</p>
-        </div>
-
-        <div class="product-card">
-          <img src="https://via.placeholder.com/100x100?text=Azul" alt="Azul de Metileno">
-          <h3>Azul de Metileno</h3>
-          <p>R$ 4,00</p>
         </div>
 
       </section>

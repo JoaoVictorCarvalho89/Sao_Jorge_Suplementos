@@ -1,25 +1,25 @@
     /* Cabeçalho superior */
 
     .main-content {
-      border: 2px solid var(--text_color2);
       margin-left: 5%;
     }
 
     /* Grade de produtos */
     .products {
-      border: 2px solid red;
       background-color: var(--text_color4);
       width: 100%;
       height: auto;
       padding: 30px;
-      display: flex;
+      justify-content: left;
+      display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
     }
 
-    .product-card {
+    .product-card, .product-card_cadastro {
       border: 1px solid #ccc;
       border-radius: 10px;
+      width: auto;
       padding: 15px;
       display: flex;
       flex-direction: column;
@@ -27,9 +27,16 @@
       text-align: center;
     }
 
+    .product-card_cadastro img { 
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
     .product-card img {
       max-width: 100px;
       height: auto;
+      border-radius: 10px;
       margin-bottom: 10px;
     }
 
@@ -43,4 +50,9 @@
       font-weight: bold;
       font-size: 16px;
       color: var(--text_cor3);
+    }
+
+    .product-card_cadastro strong a{
+      text-decoration: none;
+      color: var(--text_color1);
     }

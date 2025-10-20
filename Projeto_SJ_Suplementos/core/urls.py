@@ -1,6 +1,10 @@
 from django.contrib import admin
 from django.urls import path, include 
-from .views import index, base, cabecalho, footer, main, forms, login, recuperar_senha, dashboard, barra_lateral, forms_base, SobreNos, PaginaCliente, tela_whatsapp, carrinho, teste, categorias, areas, area_cadastro, area_remover, area_editar, publicos, publico_cadastro, publico_editar, publico_remover, instrutores, instrutor_cadastro, instrutor_editar, instrutor_remover
+from .views import index, base,  forms, login, recuperar_senha, dashboard,  forms_base, SobreNos, tela_whatsapp, carrinho, PaginaCliente, teste #Páginas principais
+from .views import produto_cadastro, produto_editar, produto_remover #Crud de Produtos
+from .views import cabecalho, footer, main, barra_lateral #Elementos de Layout
+
+from .views import categorias, areas, area_cadastro, area_remover, area_editar, publicos, publico_cadastro, publico_editar, publico_remover, instrutores, instrutor_cadastro, instrutor_editar, instrutor_remover # Páginas de Bruno GGomes
 
 urlpatterns = [
 
@@ -15,6 +19,11 @@ urlpatterns = [
     path('', PaginaCliente, name='PaginaCliente'),
     path('dashboard/', dashboard, name='dashboard'),
     path('tela_whatsapp', tela_whatsapp, name='tela_whatsapp'),
+
+    # CRUD Produtos
+    path('produto_cadastro/', produto_cadastro, name='produto_cadastro'),
+    path('produto_editar/<int:id>/', produto_editar, name='produto_editar'),
+    path('produto_remover/<int:id>/', produto_remover, name='produto_remover'),
 
     # Elementos de Layout
 
