@@ -9,7 +9,7 @@ class Produto(models.Model):
     descricao = models.TextField('Descrição')
     categoria = models.CharField('Categoria', max_length=20, null=False)
     marca = models.CharField('Marca', max_length=20)
-    fornecedor = models.ForeignKey('Fornecedor', on_delete=models.PROTECT)
+    fornecedor = models.ForeignKey('Fornecedor', on_delete=models.CASCADE, default=1)
 
 class cliente(models.Model):
     nome = models.CharField('Nome', max_length=100)
