@@ -25,11 +25,11 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      max-width: 100px;
+      max-width: 200px;
     }
 
     .product-card_cadastro img { 
-      max-width: 200px;
+      max-width: 100px;
       height: auto;
       border-radius: 10px;
       margin-bottom: 10px;
