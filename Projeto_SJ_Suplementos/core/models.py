@@ -9,7 +9,7 @@ class Produto(models.Model):
     descricao = models.TextField('Descrição')
     categoria = models.CharField('Categoria', max_length=20, null=False)
     marca = models.CharField('Marca', max_length=20)
-    fornecedor = models.ForeignKey('Fornecedor', on_delete=models.CASCADE, default=1)
+    fornecedor = models.ForeignKey('Fornecedor', on_delete=models.PROTECT)
 
 class cliente(models.Model):
     nome = models.CharField('Nome', max_length=100)
@@ -17,12 +17,12 @@ class cliente(models.Model):
     email = models.EmailField('Email')
     telefone = models.CharField('Telefone', max_length=15)
     endereço = models.TextField('Endereço')
-  
+
 class Pedido(models.Model):
     data_pedido = models.DateField('Data_Pedido', auto_now_add=True)
     valor = models.FloatField('Valor')
     cliente = models.ForeignKey(cliente, on_delete=models.PROTECT)
-  
+
 class ItemPedido(models.Model):
     quantidade = models.IntegerField('Quantidade')                       
     desconto = models.DecimalField('Desconto', max_digits=5, decimal_places=2, default=0.00)
@@ -30,6 +30,7 @@ class ItemPedido(models.Model):
     produto = models.ForeignKey(Produto, on_delete=models.PROTECT)
                                 
 class Fornecedor(models.Model):
+    id = models.CharField(primary_key=True, max_length=100)
     nome = models.CharField('Nome', max_length=100)
     cnpj = models.CharField('CNPJ', max_length=18)
     contato = models.CharField('Telefone', max_length=15)
@@ -66,4 +67,4 @@ class Aluno(models.Model):
     matricula = models.CharField('Matrícula', max_length=14, primary_key=True)
     nome = models.TextField('Nome')
     email = models.TextField('Email')
-    projetos = models.ForeignKey(Projeto, on_delete=models.PROTECT)
+    projetos = models.ForeignKey(Projeto, on_delete=models.PROTECT) 

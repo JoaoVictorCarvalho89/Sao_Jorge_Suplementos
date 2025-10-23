@@ -1,0 +1,18 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MariaDB",
+            "name": "Banco Django",
+            "username": "Carvalho",
+            "database": "C:\\Users\\joaov\\OneDrive\\Documentos\\Programação\\GitHub\\Sao_Jorge_Suplementos\\Projeto_SJ_Suplementos\\db.sqlite3"
+        }
+    ]
+}
