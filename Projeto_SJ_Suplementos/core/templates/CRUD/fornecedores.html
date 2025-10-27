@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fornecedor</title>
+</head>
+<body>
+
+    <h1>Gerenciador de Fornecedor</h1>
+    <a href="{% url 'fornecedor_cadastro' %}">Cadastrar Fornecedor</a>
+    <p>Lista de Fornecedores</p>
+    {% for fornecedor in lista_fornecedores %}
+        <p>{{ fornecedor.nome }} 
+            | <a href="{% url 'fornecedor_editar' fornecedor.id %}">EDITAR</a>
+            | <a href="{% url 'fornecedor_remover' fornecedor.id %}">APAGAR</a></p>
+        {% empty %}
+        <p>Nenhum fornecedor cadastrado</p>
+    {% endfor %}
+    
+</body>
+</html>

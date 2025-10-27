@@ -1,5 +1,5 @@
 from django import forms 
-from .models import Produto # MODELAGENS DO PROJETO SÃO JORGE SUPLEMENTOS 
+from .models import Produto, Fornecedor # MODELAGENS DO PROJETO SÃO JORGE SUPLEMENTOS 
 from .models import Area, Publico, Instrutor, Curso, Categoria, Projeto, Aluno # MODELAGENS DE BRUNO GOMES
 
 """ CLASSES DO PROJETO SÃO JORGE SUPLEMENTOS"""
@@ -7,7 +7,12 @@ from .models import Area, Publico, Instrutor, Curso, Categoria, Projeto, Aluno #
 class ProdutoForm(forms.ModelForm):
     class Meta:
         model = Produto
-        fields = ['nome', 'descricao', 'preco']
+        fields = ['nome', 'descricao', 'preco', 'validade', 'categoria', 'marca']
+
+class FornecedorForm(forms.ModelForm):
+    class Meta:
+        model = Fornecedor
+        fields = ['nome']
 
 """ CLASSES DE BRUNO GOMES"""
 

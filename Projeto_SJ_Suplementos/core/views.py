@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 """ Imports de São Jorge Suplementos """
 
-from .models import Produto
-from .forms import ProdutoForm
+from .models import Produto, Fornecedor
+from .forms import ProdutoForm, FornecedorForm
 
 """ Imports de Bruno Gomes """
 
@@ -67,6 +67,41 @@ def produto_editar(request, id):
 def produto_remover(request, id):
     produto = Produto.objects.get(pk=id)
     produto.delete()
+    return redirect('PaginaCliente')
+
+def fornecedores(request):
+    fornecedores = Fornecedor.objects.all()
+    contexto = {
+        'lista_fornecedores': fornecedores
+    }
+    return render(request, 'CRUD/fornecedores.html', contexto)
+
+def fornecedor_cadastro(request):
+    form = FornecedorForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('PaginaCliente')
+    contexto = {
+        'form': form
+    }
+    return render(request, 'CRUD/fornecedor_cadastro.html', contexto)
+
+def fornecedor_editar(request, id):
+    fornecedor = Fornecedor.objects.get(pk=id)
+    form = FornecedorForm(request.POST or None, instance=fornecedor)
+    
+    if form.is_valid():
+        form.save()
+        return redirect('PaginaCliente')
+    
+    contexto = {
+        'form': form
+    }
+    return render(request, 'CRUD/fornecedor_cadastro.html', contexto)
+
+def fornecedor_remover(request, id):
+    fornecedor = Fornecedor.objects.get(pk=id)
+    fornecedor.delete()
     return redirect('PaginaCliente')
 
 """Formulários"""

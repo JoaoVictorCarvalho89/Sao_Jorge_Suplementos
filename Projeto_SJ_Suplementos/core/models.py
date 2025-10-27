@@ -30,6 +30,7 @@ class ItemPedido(models.Model):
     produto = models.ForeignKey(Produto, on_delete=models.PROTECT)
                                 
 class Fornecedor(models.Model):
+    id = models.AutoField(primary_key=True)
     nome = models.CharField('Nome', max_length=100)
     cnpj = models.CharField('CNPJ', max_length=18)
     contato = models.CharField('Telefone', max_length=15)

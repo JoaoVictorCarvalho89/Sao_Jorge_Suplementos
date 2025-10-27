@@ -11,6 +11,12 @@
     <form method="post">
         {%csrf_token%}
         {{ form }}
+        <select name="fornecedor" required="" id="id_fornecedor">
+            <option value="" selected="">---------</option>
+            {% for fornecedor in lista_fornecedores %}
+                <option value="{{ fornecedor.id }}">{{ fornecedor.nome }}</option>
+            {% endfor %}
+        </select>
         <p><input type="submit" value="Enviar"/></p>
     </form>
 

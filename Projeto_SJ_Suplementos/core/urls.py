@@ -4,6 +4,7 @@ from .views import index, base,   SobreNos, tela_whatsapp, carrinho, PaginaClien
 
 from .views import forms, login, recuperar_senha, dashboard, forms_base #Formulários 
 from .views import produto_cadastro, produto_editar, produto_remover #Crud de Produtos
+from .views import fornecedores, fornecedor_cadastro, fornecedor_editar, fornecedor_remover #Crud de Fornecedores
 from .views import cabecalho, footer, main, barra_lateral #Elementos de Layout
 
 from .views import categorias, areas, area_cadastro, area_remover, area_editar, publicos, publico_cadastro, publico_editar, publico_remover, instrutores, instrutor_cadastro, instrutor_editar, instrutor_remover # Páginas de Bruno GGomes
@@ -26,6 +27,12 @@ urlpatterns = [
     path('produto_cadastro/', produto_cadastro, name='produto_cadastro'),
     path('produto_editar/<int:id>/', produto_editar, name='produto_editar'),
     path('produto_remover/<int:id>/', produto_remover, name='produto_remover'),
+
+    # Fornecedores
+    path('fornecedores/', fornecedores, name='fornecedores'),
+    path('fornecedor_cadastro/', fornecedor_cadastro, name='fornecedor_cadastro'),
+    path('fornecedor_editar/<int:id>/', fornecedor_editar, name='fornecedor_editar'),
+    path('fornecedor_remover/<int:id>/', fornecedor_remover, name='fornecedor_remover'),
 
     # Elementos de Layout
 

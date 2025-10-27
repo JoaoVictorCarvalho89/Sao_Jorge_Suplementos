@@ -21,12 +21,21 @@
           <strong><a href="{% url 'produto_cadastro' %}">Cadastre um produto</a></strong>
         </div>
 
+        <div class="product-card_cadastro">
+          <img src="{% static 'Imagens/Produtos_genéricos.jpg' %}" alt="Cadastre um fornecedor">
+          <strong><a href="{% url 'fornecedor_cadastro' %}">Cadastre um fornecedor</a></strong>
+          <strong></strong><a href="{% url 'fornecedores' %}">Fornecedores</a></strong>
+        </div>
+
         {% for produto in lista_produtos %}
           <div class="product-card">
             <img src="{% static 'Imagens/Produtos_genéricos.jpg' %}" alt="Cadastre um produto">
             <h3>{{ produto.nome }}</h3>
             <p>{{ produto.descricao }}</p>
             <p>R$ {{ produto.preco }}</p>
+            <p><strong>Categoria:</strong> {{ produto.categoria }}</p>
+            <p><strong>Marca:</strong> {{ produto.marca }}</p>
+            <p><strong>Fornecedor:</strong> {{ produto.fornecedor }}</p>
             <p><a href="{% url 'produto_editar' produto.id %}">EDITAR</a> | <a href="{% url 'produto_remover' produto.id %}">APAGAR</a></p>
           </div>
           {% empty %}
