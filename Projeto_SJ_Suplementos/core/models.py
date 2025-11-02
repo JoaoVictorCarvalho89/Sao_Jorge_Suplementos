@@ -9,6 +9,7 @@ class Produto(models.Model):
     descricao = models.TextField('Descrição')
     categoria = models.CharField('Categoria', max_length=20, null=False)
     marca = models.CharField('Marca', max_length=20)
+    imagem = models.ImageField(upload_to='produtos/')
     fornecedor = models.ForeignKey('Fornecedor', on_delete=models.PROTECT)
 
 class cliente(models.Model):
@@ -35,6 +36,10 @@ class Fornecedor(models.Model):
     cnpj = models.CharField('CNPJ', max_length=18)
     contato = models.CharField('Telefone', max_length=15)
     endereço = models.TextField('Endereço')
+
+    def __str__(self):
+        return self.nome
+
 
 """ MODELAGENS DE BRUNO GOMES"""
 

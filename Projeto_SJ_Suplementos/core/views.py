@@ -42,11 +42,12 @@ def PaginaCliente(request):
     return render(request, 'PaginaCliente.html', contexto)
 
 def produto_cadastro(request):
-    form = ProdutoForm(request.POST or None)
+    form = ProdutoForm(request.POST or None, request.FILES or None)
     if form.is_valid():
         form.save()
         return redirect('PaginaCliente')
     contexto = {
+        'lista_fornecedores': Fornecedor.objects.all(),
         'form': form
     }
     return render(request, 'CRUD/produto_cadastro.html', contexto)

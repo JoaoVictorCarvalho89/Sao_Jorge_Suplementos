@@ -8,15 +8,9 @@
 <body>
 
     <h1>Cadastro de Produtos</h1>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {%csrf_token%}
         {{ form }}
-        <select name="fornecedor" required="" id="id_fornecedor">
-            <option value="" selected="">---------</option>
-            {% for fornecedor in lista_fornecedores %}
-                <option value="{{ fornecedor.id }}">{{ fornecedor.nome }}</option>
-            {% endfor %}
-        </select>
         <p><input type="submit" value="Enviar"/></p>
     </form>
 

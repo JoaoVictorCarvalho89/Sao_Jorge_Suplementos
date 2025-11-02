@@ -24,15 +24,15 @@
         <div class="product-card_cadastro">
           <img src="{% static 'Imagens/Produtos_genéricos.jpg' %}" alt="Cadastre um fornecedor">
           <strong><a href="{% url 'fornecedor_cadastro' %}">Cadastre um fornecedor</a></strong>
-          <strong></strong><a href="{% url 'fornecedores' %}">Fornecedores</a></strong>
+          <strong><a href="{% url 'fornecedores' %}">Fornecedores</a></strong>
         </div>
 
         {% for produto in lista_produtos %}
           <div class="product-card">
-            <img src="{% static 'Imagens/Produtos_genéricos.jpg' %}" alt="Cadastre um produto">
+            <img src="{{ produto.imagem.url }}" alt="Imagem de {{ produto.nome }}">
             <h3>{{ produto.nome }}</h3>
-            <p>{{ produto.descricao }}</p>
-            <p>R$ {{ produto.preco }}</p>
+            <p>Preço: R$ {{ produto.preco }}</p>
+            <p>Descrição: {{ produto.descricao }}</p>
             <p><strong>Categoria:</strong> {{ produto.categoria }}</p>
             <p><strong>Marca:</strong> {{ produto.marca }}</p>
             <p><strong>Fornecedor:</strong> {{ produto.fornecedor }}</p>
@@ -41,13 +41,7 @@
           {% empty %}
           <p>Nenhum produto cadastrado</p>
         {% endfor %}
-
-        <div class="product-card">
-          <img src="{% static 'Imagens/creatina250g.webp' %}" alt="Whey Protein">
-          <h3>Whey Protein</h3>
-          <p>R$ 125,00</p>
-        </div>
-
+        
       </section>
       
     </div>

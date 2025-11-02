@@ -1,3 +1,5 @@
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include 
 from .views import index, base,   SobreNos, tela_whatsapp, carrinho, PaginaCliente, teste #Páginas principais
@@ -68,4 +70,5 @@ urlpatterns = [
     path('instrutor_editar/<int:id>/', instrutor_editar, name='instrutor_editar'),
     path('instrutor_remover/<int:id>/', instrutor_remover, name='instrutor_remover'),
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

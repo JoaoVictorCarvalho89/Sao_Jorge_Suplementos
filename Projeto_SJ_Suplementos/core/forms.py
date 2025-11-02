@@ -7,7 +7,7 @@ from .models import Area, Publico, Instrutor, Curso, Categoria, Projeto, Aluno #
 class ProdutoForm(forms.ModelForm):
     class Meta:
         model = Produto
-        fields = ['nome', 'descricao', 'preco', 'validade', 'categoria', 'marca']
+        fields = ['nome', 'descricao', 'preco', 'validade', 'categoria', 'marca', 'imagem', 'fornecedor']
 
 class FornecedorForm(forms.ModelForm):
     class Meta:

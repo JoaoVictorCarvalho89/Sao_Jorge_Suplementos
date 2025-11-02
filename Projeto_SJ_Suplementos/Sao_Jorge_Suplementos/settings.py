@@ -29,6 +29,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+MEDIA_URL = '/media/'  # para acessar a imagem pelo navegador
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # diretório onde a imagem será salva
+
 # Application definition
 
 INSTALLED_APPS = [
