@@ -17,26 +17,26 @@
       <section class="products">
 
         <div class="product-card_cadastro">
+
           <img src="{% static 'Imagens/Produtos_genéricos.jpg' %}" alt="Cadastre um produto">
           <strong><a href="{% url 'produto_cadastro' %}">Cadastre um produto</a></strong>
-        </div>
-
-        <div class="product-card_cadastro">
-          <img src="{% static 'Imagens/Produtos_genéricos.jpg' %}" alt="Cadastre um fornecedor">
-          <strong><a href="{% url 'fornecedor_cadastro' %}">Cadastre um fornecedor</a></strong>
-          <strong><a href="{% url 'fornecedores' %}">Fornecedores</a></strong>
+          <img src="{% static 'Imagens/Fornecedor_ilustrativo.png' %}" alt="Cadastre um fornecedor">
+          <strong><a href="{% url 'fornecedores' %}" id="fornecedor_link"><p>Fornecedores</p><i class="fa-solid fa-truck"></i></a></strong>
+          
         </div>
 
         {% for produto in lista_produtos %}
           <div class="product-card">
             <img src="{{ produto.imagem.url }}" alt="Imagem de {{ produto.nome }}">
-            <h3>{{ produto.nome }}</h3>
-            <p>Preço: R$ {{ produto.preco }}</p>
-            <p>Descrição: {{ produto.descricao }}</p>
-            <p><strong>Categoria:</strong> {{ produto.categoria }}</p>
-            <p><strong>Marca:</strong> {{ produto.marca }}</p>
-            <p><strong>Fornecedor:</strong> {{ produto.fornecedor }}</p>
-            <p><a href="{% url 'produto_editar' produto.id %}">EDITAR</a> | <a href="{% url 'produto_remover' produto.id %}">APAGAR</a></p>
+              <h3>{{ produto.nome }}</h3>
+              <strong>
+                <p>Preço: R$ {{ produto.preco }}</p>
+                <p>Descrição: {{ produto.descricao }}</p>
+                <p>Categoria: {{ produto.categoria }}</p>
+                <p>Marca: {{ produto.marca }}</p>
+                <p>Fornecedor: {{ produto.fornecedor }}</p>
+                <p><a href="{% url 'produto_editar' produto.id %}">EDITAR</a> | <a href="{% url 'produto_remover' produto.id %}">APAGAR</a></p>
+              </strong>
           </div>
           {% empty %}
           <p>Nenhum produto cadastrado</p>

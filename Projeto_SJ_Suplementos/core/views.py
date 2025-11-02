@@ -81,7 +81,7 @@ def fornecedor_cadastro(request):
     form = FornecedorForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('PaginaCliente')
+        return redirect('fornecedores')
     contexto = {
         'form': form
     }
@@ -103,7 +103,7 @@ def fornecedor_editar(request, id):
 def fornecedor_remover(request, id):
     fornecedor = Fornecedor.objects.get(pk=id)
     fornecedor.delete()
-    return redirect('PaginaCliente')
+    return redirect('fornecedores')
 
 """Formulários"""
 

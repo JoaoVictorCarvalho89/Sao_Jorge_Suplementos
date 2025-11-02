@@ -1,23 +1,38 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'CSS/BaseCSS/variaveis_base.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/CRUD_CSS/gerenciar_lista.css' %}?v={% now 'U' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'Imagens/favicon/Favicon.ico' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Fornecedor</title>
 </head>
+
 <body>
 
-    <h1>Gerenciador de Fornecedor</h1>
-    <a href="{% url 'fornecedor_cadastro' %}">Cadastrar Fornecedor</a>
-    <p>Lista de Fornecedores</p>
-    {% for fornecedor in lista_fornecedores %}
-        <p>{{ fornecedor.nome }} 
-            | <a href="{% url 'fornecedor_editar' fornecedor.id %}">EDITAR</a>
-            | <a href="{% url 'fornecedor_remover' fornecedor.id %}">APAGAR</a></p>
-        {% empty %}
-        <p>Nenhum fornecedor cadastrado</p>
-    {% endfor %}
-    
+    <h1>Gerenciador de Fornecedores</h1>
+    <a href="{% url 'fornecedor_cadastro' %}" class="link">Cadastrar Fornecedor <i class="fa-solid fa-truck"></i></a>
+    <a href="{% url 'PaginaCliente' %}" class="link"><i class="fa fa-arrow-right" style="rotate: 180deg;"></i>Voltar</a>
+    <table>
+        <tr>
+            <th id="nome">Nome do Fornecedor</th>
+            <th id="acoes">Ações</th>
+        </tr>
+        {% for fornecedor in lista_fornecedores %}
+            <tr>
+                <td id="nome">{{ fornecedor.nome }}</td>
+                <td id="acoes">
+                    <a href="{% url 'fornecedor_editar' fornecedor.id %}">EDITAR</a>|
+                        <a href="{% url 'fornecedor_remover' fornecedor.id %}">APAGAR</a>
+                    </td>
+                </tr>
+            {% empty %}
+            <p>Nenhum fornecedor cadastrado</p>
+        {% endfor %}
+    </table>
 </body>
 </html>

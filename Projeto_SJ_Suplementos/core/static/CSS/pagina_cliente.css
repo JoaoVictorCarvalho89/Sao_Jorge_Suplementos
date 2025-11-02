@@ -12,7 +12,7 @@
       padding: 30px;
       justify-content: left;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 0.1fr));
       gap: 20px;
     }
 
@@ -20,12 +20,17 @@
       border: 1px solid #ccc;
       border-radius: 10px;
       width: auto;
+      height: auto;
       padding: 15px;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
       max-width: 200px;
+      gap: 10px;
+    }
+
+    .product-card strong, .product-card_cadastro strong {
       gap: 10px;
     }
 
@@ -59,3 +64,8 @@
       text-decoration: none;
       color: var(--text_color1);
     }
+
+    #fornecedor_link {
+      display: flex;
+      gap: 5px;
+    } 
