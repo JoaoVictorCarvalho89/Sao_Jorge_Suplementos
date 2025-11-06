@@ -93,7 +93,7 @@ def fornecedor_editar(request, id):
     
     if form.is_valid():
         form.save()
-        return redirect('PaginaCliente')
+        return redirect('fornecedores')
     
     contexto = {
         'form': form

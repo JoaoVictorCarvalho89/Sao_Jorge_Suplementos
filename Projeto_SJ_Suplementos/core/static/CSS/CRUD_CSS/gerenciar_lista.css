@@ -22,25 +22,31 @@ a {
     text-decoration: none;
 }
 
+table {
+    width: 90%;
+    margin: 0 auto;
+}
+
 tr, th, td {
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: var(--cor_secundaria);
     border: 1px solid var(--text_cor);
-    width: 100%;
     color: var(--text_cor);
 }
 
-#nome{
-    width: auto;
+tr, th{
+    width: 50%;
+}
+
+.nome{
     padding: 12px;
     text-align: center;
 }
 
-#acoes {
-    width: auto;
+.acoes{
     padding: 12px;
     text-align: center;
-    display: flex;
-    justify-content: center;
     gap: 10px;
 }
 

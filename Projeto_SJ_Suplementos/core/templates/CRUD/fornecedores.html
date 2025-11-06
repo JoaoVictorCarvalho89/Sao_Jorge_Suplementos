@@ -19,14 +19,14 @@
     <a href="{% url 'PaginaCliente' %}" class="link"><i class="fa fa-arrow-right" style="rotate: 180deg;"></i>Voltar</a>
     <table>
         <tr>
-            <th id="nome">Nome do Fornecedor</th>
-            <th id="acoes">Ações</th>
+            <th class="nome">Nome do Fornecedor</th>
+            <th class="acoes">Ações</th>
         </tr>
         {% for fornecedor in lista_fornecedores %}
             <tr>
-                <td id="nome">{{ fornecedor.nome }}</td>
-                <td id="acoes">
-                    <a href="{% url 'fornecedor_editar' fornecedor.id %}">EDITAR</a>|
+                <td class="nome">{{ fornecedor.nome }}</td>
+                <td class="acoes">
+                    <a href="{% url 'fornecedor_editar' fornecedor.id %}">EDITAR</a> |
                         <a href="{% url 'fornecedor_remover' fornecedor.id %}">APAGAR</a>
                     </td>
                 </tr>
