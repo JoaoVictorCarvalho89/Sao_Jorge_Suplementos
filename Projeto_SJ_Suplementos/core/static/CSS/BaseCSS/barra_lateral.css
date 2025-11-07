@@ -11,7 +11,7 @@
     width: 60px;
 }
 .sidebar:hover{
-    width: 5%;
+    width: 90px;
 }
 .sidebar nav{
     justify-content: space-between;
