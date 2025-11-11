@@ -34,7 +34,77 @@ def tela_whatsapp(request):
 def carrinho(request):
     return render(request, 'carrinho.html')
 
-#Ponha o código aqui!
+def PaginaCliente(request):
+    produtos = Produto.objects.all()
+    contexto = {
+        'lista_produtos': produtos
+    }
+    return render(request, 'PaginaCliente.html', contexto)
+
+def produto_cadastro(request):
+    form = ProdutoForm(request.POST or None, request.FILES or None)
+    if form.is_valid():
+        form.save()
+        return redirect('PaginaCliente')
+    contexto = {
+        'lista_fornecedores': Fornecedor.objects.all(),
+        'form': form
+    }
+    return render(request, 'CRUD/produto_cadastro.html', contexto)
+
+def produto_editar(request, id):
+    produto = Produto.objects.get(pk=id)
+    form = ProdutoForm(request.POST or None, instance=produto)
+    
+    if form.is_valid():
+        form.save()
+        return redirect('PaginaCliente')
+    
+    contexto = {
+        'form': form
+    }
+    return render(request, 'CRUD/produto_cadastro.html', contexto)
+
+def produto_remover(request, id):
+    produto = Produto.objects.get(pk=id)
+    produto.delete()
+    return redirect('PaginaCliente')
+
+def fornecedores(request):
+    fornecedores = Fornecedor.objects.all()
+    contexto = {
+        'lista_fornecedores': fornecedores
+    }
+    return render(request, 'CRUD/fornecedores.html', contexto)
+
+def fornecedor_cadastro(request):
+    form = FornecedorForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('fornecedores')
+    contexto = {
+        'form': form
+    }
+    return render(request, 'CRUD/fornecedor_cadastro.html', contexto)
+
+def fornecedor_editar(request, id):
+    fornecedor = Fornecedor.objects.get(pk=id)
+    form = FornecedorForm(request.POST or None, instance=fornecedor)
+    
+    if form.is_valid():
+        form.save()
+        return redirect('fornecedores')
+    
+    contexto = {
+        'form': form
+    }
+    return render(request, 'CRUD/fornecedor_cadastro.html', contexto)
+
+def fornecedor_remover(request, id):
+    fornecedor = Fornecedor.objects.get(pk=id)
+    fornecedor.delete()
+    return redirect('fornecedores')
+
 
 """Formulários"""
 
