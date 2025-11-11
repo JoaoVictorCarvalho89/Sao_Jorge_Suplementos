@@ -25,16 +25,7 @@ urlpatterns = [
     path('dashboard/', dashboard, name='dashboard'),
     path('tela_whatsapp', tela_whatsapp, name='tela_whatsapp'),
 
-    # CRUD Produtos
-    path('produto_cadastro/', produto_cadastro, name='produto_cadastro'),
-    path('produto_editar/<int:id>/', produto_editar, name='produto_editar'),
-    path('produto_remover/<int:id>/', produto_remover, name='produto_remover'),
-
-    # Fornecedores
-    path('fornecedores/', fornecedores, name='fornecedores'),
-    path('fornecedor_cadastro/', fornecedor_cadastro, name='fornecedor_cadastro'),
-    path('fornecedor_editar/<int:id>/', fornecedor_editar, name='fornecedor_editar'),
-    path('fornecedor_remover/<int:id>/', fornecedor_remover, name='fornecedor_remover'),
+    #Ponha o código aqui!
 
     # Elementos de Layout
 

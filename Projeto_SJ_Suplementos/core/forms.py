@@ -4,40 +4,7 @@ from .models import Area, Publico, Instrutor, Curso, Categoria, Projeto, Aluno #
 
 """ CLASSES DO PROJETO SÃO JORGE SUPLEMENTOS"""
 
-class ProdutoForm(forms.ModelForm):
-    class Meta:
-        model = Produto
-        fields = ['nome', 'descricao', 'preco', 'validade', 'categoria', 'marca', 'imagem', 'fornecedor']
-        widgets = {
-            'nome': forms.TextInput(attrs={
-                'class': 'input-field',
-                'placeholder': 'Nome do produto'
-            }),
-            'descricao': forms.Textarea(attrs={
-                'class': 'input-field',
-                'placeholder': 'Descrição do produto'
-            }),
-            'validade': forms.DateInput(attrs={
-                'class': 'input-field',
-                'type': 'date'
-            }),
-            'preco': forms.NumberInput(attrs={
-                'class': 'input-field',
-                'step': '0.01'
-            }),
-            'imagem': forms.ClearableFileInput(attrs={
-                'class': 'input-field'
-            }),
-            'fornecedor': forms.Select(attrs={
-                'class': 'input-field',
-                'placeholder': 'Selecione o fornecedor'
-            })
-        }
-
-class FornecedorForm(forms.ModelForm):
-    class Meta:
-        model = Fornecedor
-        fields = ['nome']
+#Ponha o código aqui!
         
 """ CLASSES DE BRUNO GOMES"""
 
