@@ -105,7 +105,6 @@ def fornecedor_remover(request, id):
     fornecedor.delete()
     return redirect('fornecedores')
 
-
 """Formulários"""
 
 def forms_base(request):
