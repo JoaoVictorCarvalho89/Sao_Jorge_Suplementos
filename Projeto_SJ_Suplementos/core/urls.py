@@ -20,8 +20,8 @@ urlpatterns = [
     path('index', index, name='index'),
     path('carrinho', carrinho, name='carrinho'),
     path('SobreNos/', SobreNos, name='SobreNos'),
-    path('', PaginaCliente, name='PaginaCliente'),
-    path('dashboard/', dashboard, name='dashboard'),
+    path('PaginaCliente/', PaginaCliente, name='PaginaCliente'),
+    path('', dashboard, name='dashboard'),
     path('tela_whatsapp', tela_whatsapp, name='tela_whatsapp'),
 
     # CRUD Produtos
