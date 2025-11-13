@@ -3,8 +3,8 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include 
 
-from .views import index, base,   SobreNos, tela_whatsapp, carrinho, PaginaCliente, teste #Páginas principais
-from .views import forms, login, recuperar_senha, dashboard, forms_base #Formulários 
+from .views import index, base, perfil, SobreNos, tela_whatsapp, carrinho, PaginaCliente, teste #Páginas principais
+from .views import forms, autenticacao, recuperar_senha, dashboard, forms_base #Formulários 
 from .views import produto_cadastro, produto_editar, produto_remover #Crud de Produtos
 from .views import fornecedores, fornecedor_cadastro, fornecedor_editar, fornecedor_remover #Crud de Fornecedores
 from .views import cabecalho, footer, main, barra_lateral #Elementos de Layout
@@ -17,12 +17,13 @@ urlpatterns = [
     # Páginas Principais
 
     path('base/', base, name='base'),
-    path('index', index, name='index'),
-    path('carrinho', carrinho, name='carrinho'),
+    path('', index, name='index'),
+    path('perfil/', perfil, name='perfil'),
+    path('carrinho/', carrinho, name='carrinho'),
     path('SobreNos/', SobreNos, name='SobreNos'),
     path('PaginaCliente/', PaginaCliente, name='PaginaCliente'),
-    path('', dashboard, name='dashboard'),
-    path('tela_whatsapp', tela_whatsapp, name='tela_whatsapp'),
+    path('dashboard/', dashboard, name='dashboard'),
+    path('tela_whatsapp/', tela_whatsapp, name='tela_whatsapp'),
 
     # CRUD Produtos
 
@@ -52,7 +53,7 @@ urlpatterns = [
 
     path('forms_base/', forms_base, name='forms_base'),
     path('forms/', forms, name='forms'),
-    path('login/', login, name='login'),
+    path('login/', autenticacao, name='login'),
     path('recuperar_senha/', recuperar_senha, name='recuperar_senha'),
 
     # ÁREAS, PÚBLICOS E INSTRUTORES (SOMENTE AULAS DE BRUNO GOMES)
@@ -61,7 +62,7 @@ urlpatterns = [
     path('areas/', areas, name='areas'),
     path('publicos/', publicos, name='publicos'),
     path('instrutores/', instrutores, name='instrutores'),
-    path('area_cadastro', area_cadastro, name='area_cadastro'),
+    path('area_cadastro/', area_cadastro, name='area_cadastro'),
     path('area_editar/<int:id>/', area_editar, name='area_editar'),
     path('area_remover/<int:id>/', area_remover, name='area_remover'),
     path('publico_cadastro/', publico_cadastro, name='publico_cadastro'),

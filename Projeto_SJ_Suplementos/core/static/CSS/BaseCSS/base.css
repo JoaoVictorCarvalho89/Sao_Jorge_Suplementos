@@ -18,6 +18,5 @@ body{
     flex-direction: column;
     align-items: end;
     display: flex;
-    justify-content: space-between;
     width: 100%;
 }

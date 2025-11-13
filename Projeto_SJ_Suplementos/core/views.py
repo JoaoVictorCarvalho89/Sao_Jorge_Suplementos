@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
+
 """ Imports de São Jorge Suplementos """
 
 from .models import Produto, Fornecedor
 from .forms import ProdutoForm, FornecedorForm
+from django.contrib.auth import authenticate, login
 
 """ Imports de Bruno Gomes """
 
@@ -18,6 +20,9 @@ logger.debug("Teste: sistema de log está funcionando!")
 
 def index(request):
     return render(request, 'index.html')
+
+def perfil(request):
+    return render(request, 'perfil.html')
 
 def base(request):
     return render(request, 'base.html')
@@ -113,7 +118,16 @@ def forms_base(request):
 def forms(request):
     return render(request, 'forms/forms.html')
 
-def login(request):
+def autenticacao(request):
+    if request.method == 'POST':
+        email_user = request.POST['email']
+        senha = request.POST['senha']
+        user = authenticate(request, username=email_user, password=senha)
+        if user is not None:
+            login(request, user)
+            return redirect('perfil')
+        else:
+            return render(request, 'forms/login.html', {'error': 'Credenciais inválidas'})
     return render(request, 'forms/login.html')
 
 def recuperar_senha(request):
