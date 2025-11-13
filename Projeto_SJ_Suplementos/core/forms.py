@@ -4,7 +4,13 @@ from .models import Area, Publico, Instrutor, Curso, Categoria, Projeto, Aluno #
 
 """ CLASSES DO PROJETO SÃO JORGE SUPLEMENTOS"""
 
-#Ponha o código aqui!
+class FornecedorForm(forms.ModelForm):
+    model = Fornecedor
+    fields = ['nome']
+    
+class ProdutoForm(forms.ModelForm):
+    model = Produto
+    fields = ['nome']
         
 """ CLASSES DE BRUNO GOMES"""
 
