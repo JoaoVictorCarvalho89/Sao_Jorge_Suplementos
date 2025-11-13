@@ -8,7 +8,7 @@ from .views import forms, login, recuperar_senha, dashboard, forms_base #Formul�
 from .views import produto_cadastro, produto_editar, produto_remover #Crud de Produtos
 from .views import fornecedores, fornecedor_cadastro, fornecedor_editar, fornecedor_remover #Crud de Fornecedores
 from .views import cabecalho, footer, main, barra_lateral #Elementos de Layout
-from .views import categorias, areas, area_cadastro, area_remover, area_editar, publicos, publico_cadastro, publico_editar, publico_remover, instrutores, instrutor_cadastro, instrutor_editar, instrutor_remover # Páginas de Bruno GGomes
+from .views import categorias, areas, area_cadastro, area_remover, area_editar, publicos, publico_cadastro, publico_editar, publico_remover, instrutores, instrutor_cadastro, instrutor_editar, instrutor_remover # Páginas de Bruno Gomes
 
 urlpatterns = [
 

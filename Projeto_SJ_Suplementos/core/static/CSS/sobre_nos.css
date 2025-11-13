@@ -1,6 +1,15 @@
+main{
+
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+
+}
+
 main .conteiner{
     margin-left: 2%;
     margin-top: 2%;
+    
 }
 
 main .conteiner h1 {
