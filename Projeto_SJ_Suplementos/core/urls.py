@@ -17,7 +17,7 @@ urlpatterns = [
     # Páginas Principais
 
     path('base/', base, name='base'),
-    path('', index, name='index'),
+    path('index/', index, name='index'),
     path('perfil/', perfil, name='perfil'),
     path('carrinho/', carrinho, name='carrinho'),
     path('SobreNos/', SobreNos, name='SobreNos'),
@@ -53,7 +53,7 @@ urlpatterns = [
 
     path('forms_base/', forms_base, name='forms_base'),
     path('forms/', forms, name='forms'),
-    path('login/', autenticacao, name='login'),
+    path('', autenticacao, name='login'),
     path('recuperar_senha/', recuperar_senha, name='recuperar_senha'),
 
     # ÁREAS, PÚBLICOS E INSTRUTORES (SOMENTE AULAS DE BRUNO GOMES)
