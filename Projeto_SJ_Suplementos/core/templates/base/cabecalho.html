@@ -4,7 +4,9 @@
         <div class="header">
             <div><strong>S.J. SUPLEMENTOS</strong></div>
             <div class="header-right">
-                <a href="{% url 'forms' %}" class="contact-button"><div><p>CADASTRE-SE!</p><i class="fa-solid fa-pen" style="color: black;"></i></div></a>
+                {% if user =! %}
+                    <a href="{% url 'forms' %}" class="contact-button"><div><p>CADASTRE-SE!</p><i class="fa-solid fa-pen" style="color: black;"></i></div></a>
+                {% endif %}
                 <a href="{% url 'tela_whatsapp' %}" class="contact-button"><div><p>FALE CONOSCO</p><i class="fab fa-whatsapp" style="color: green;"></i></div></a>
                 <a href="{% url 'SobreNos' %}" class="sobre-nos-button"><div><p>SOBRE NÓS</p><i class="fas fa-users"></i></div></a>
                 <div class="search-bar">
