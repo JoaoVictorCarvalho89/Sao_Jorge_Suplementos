@@ -4,11 +4,11 @@ from django.contrib import admin
 from django.urls import path, include 
 
 from .views import index, base, perfil, SobreNos, tela_whatsapp, carrinho, PaginaCliente, teste #Páginas principais
-from .views import forms, autenticacao, recuperar_senha, dashboard, forms_base #Formulários 
+from .views import forms, autenticacao, desconectar, recuperar_senha, dashboard, forms_base #Formulários 
 from .views import produto_cadastro, produto_editar, produto_remover #Crud de Produtos
 from .views import fornecedores, fornecedor_cadastro, fornecedor_editar, fornecedor_remover #Crud de Fornecedores
 from .views import cabecalho, footer, main, barra_lateral #Elementos de Layout
-from .views import categorias, areas, area_cadastro, area_remover, area_editar, publicos, publico_cadastro, publico_editar, publico_remover, instrutores, instrutor_cadastro, instrutor_editar, instrutor_remover # Páginas de Bruno Gomes
+from .views import categorias, areas, area_cadastro, area_remover, area_editar, publicos, publico_cadastro, publico_editar, publico_remover, instrutores, instrutor_cadastro, instrutor_editar, instrutor_remover #Páginas de Bruno Gomes
 
 urlpatterns = [
 
@@ -17,7 +17,7 @@ urlpatterns = [
     # Páginas Principais
 
     path('base/', base, name='base'),
-    path('index/', index, name='index'),
+    path('', index, name='index'),
     path('perfil/', perfil, name='perfil'),
     path('carrinho/', carrinho, name='carrinho'),
     path('SobreNos/', SobreNos, name='SobreNos'),
@@ -53,7 +53,8 @@ urlpatterns = [
 
     path('forms_base/', forms_base, name='forms_base'),
     path('forms/', forms, name='forms'),
-    path('', autenticacao, name='login'),
+    path('autenticacao/', autenticacao, name='login'),
+    path('index', desconectar, name='desconectar'),
     path('recuperar_senha/', recuperar_senha, name='recuperar_senha'),
 
     # ÁREAS, PÚBLICOS E INSTRUTORES (SOMENTE AULAS DE BRUNO GOMES)

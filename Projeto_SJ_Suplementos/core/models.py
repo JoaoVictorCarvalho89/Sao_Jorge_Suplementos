@@ -1,8 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+
 class Usuario(AbstractUser):
     cpf = models.CharField('CPF', max_length=11)
     nome_completo = models.CharField('Nome_completo', max_length=50)
+    
 
 """ MODELAGENS DO PROJETO SÃO JORGE SUPLEMENTOS"""
 

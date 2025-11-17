@@ -4,7 +4,8 @@ from django.shortcuts import render, redirect
 
 from .models import Produto, Fornecedor
 from .forms import ProdutoForm, FornecedorForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 """ Imports de Bruno Gomes """
 
@@ -21,6 +22,7 @@ logger.debug("Teste: sistema de log está funcionando!")
 def index(request):
     return render(request, 'index.html')
 
+@login_required
 def perfil(request):
     return render(request, 'perfil.html')
 
@@ -120,15 +122,19 @@ def forms(request):
 
 def autenticacao(request):
     if request.method == 'POST':
-        email_user = request.POST['email']
+        nome_user = request.POST['nome']
         senha = request.POST['senha']
-        user = authenticate(request, username=email_user, password=senha)
+        user = authenticate(request, username=nome_user, password=senha)
         if user is not None:
             login(request, user)
-            return redirect('perfil')
+            return render(request, 'dashboard')
         else:
             return render(request, 'forms/login.html', {'error': 'Credenciais inválidas'})
     return render(request, 'forms/login.html')
+
+def desconectar(request):
+    logout(request)
+    return redirect('index')
 
 def recuperar_senha(request):
     return render(request, 'forms/recuperar_senha.html')
