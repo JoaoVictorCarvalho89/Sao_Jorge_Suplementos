@@ -122,12 +122,12 @@ def forms(request):
 
 def autenticacao(request):
     if request.method == 'POST':
-        nome_user = request.POST['nome']
+        email_user = request.POST['email']
         senha = request.POST['senha']
-        user = authenticate(request, username=nome_user, password=senha, )
+        user = authenticate(request, username=email_user, password=senha, )
         if user is not None:
             login(request, user)
-            return render(request, 'dashboard')
+            return render(request, 'dashboard.html')
         else:
             return render(request, 'forms/login.html', {'error': 'Credenciais inválidas'})
     return render(request, 'forms/login.html')
