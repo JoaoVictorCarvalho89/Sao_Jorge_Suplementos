@@ -1,8 +1,8 @@
     /* Cabeçalho superior */
 
     .main-content {
-      margin-top: 0px;
-      
+      margin-top: var(--alinhamento_barra_e_main);
+      margin-left: 4%;
     }
 
     /* Grade de produtos */

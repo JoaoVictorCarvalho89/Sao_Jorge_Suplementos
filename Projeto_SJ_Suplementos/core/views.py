@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 
 """ Imports de São Jorge Suplementos """
 
@@ -122,18 +123,21 @@ def forms(request):
 
 def autenticacao(request):
     if request.method == 'POST':
-        email_user = request.POST['email']
+        nome_user = request.POST['nome']
         senha = request.POST['senha']
-        user = authenticate(request, username=email_user, password=senha, )
+        user = authenticate(request, username=nome_user, password=senha, )
         if user is not None:
             login(request, user)
+            messages.success(request, 'Bem-vindo, ' + nome_user + '!')
             return render(request, 'dashboard.html')
         else:
-            return render(request, 'forms/login.html', {'error': 'Credenciais inválidas'})
+            messages.error(request, 'Credenciais inválidas. Tente novamente.')
+            return render(request, 'forms/login.html')
     return render(request, 'forms/login.html')
 
 def desconectar(request):
     logout(request)
+    messages.success(request, 'Você saiu com sucesso.')
     return redirect('index')
 
 def recuperar_senha(request):
