@@ -17,10 +17,10 @@ urlpatterns = [
     # Páginas Principais
 
     path('base/', base, name='base'),
-    path('index/', index, name='index'),
+    path('', index, name='index'),
     path('perfil/', perfil, name='perfil'),
     path('carrinho/', carrinho, name='carrinho'),
-    path('', SobreNos, name='SobreNos'),
+    path('SobreNos/', SobreNos, name='SobreNos'),
     path('PaginaCliente/', PaginaCliente, name='PaginaCliente'),
     path('dashboard/', dashboard, name='dashboard'),
     path('tela_whatsapp/', tela_whatsapp, name='tela_whatsapp'),
