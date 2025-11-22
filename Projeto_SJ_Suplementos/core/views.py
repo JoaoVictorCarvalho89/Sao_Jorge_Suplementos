@@ -137,7 +137,7 @@ def autenticacao(request):
 
 def desconectar(request):
     logout(request)
-    messages.success(request, 'Você saiu com sucesso.')
+    messages.success(request, 'Você saiu com sucesso!')
     return redirect('index')
 
 def recuperar_senha(request):
