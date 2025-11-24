@@ -4,14 +4,14 @@ from django.contrib import messages
 """ Imports de São Jorge Suplementos """
 
 from .models import Produto, Fornecedor
-from .forms import ProdutoForm, FornecedorForm
+from .forms import ProdutoForm, FornecedorForm, ClienteForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
 """ Imports de Bruno Gomes """
 
 from .models import Area, Publico, Instrutor
-from .forms import AreaForm, PublicoForm, InstrutorForm
+from .forms import AreaForm, PublicoForm, InstrutorForm#, UsuarioForm
 
 import logging
 
@@ -119,7 +119,14 @@ def forms_base(request):
     return render(request, 'forms/forms_base.html')
 
 def forms(request):
-    return render(request, 'forms/forms.html')
+    form = ClienteForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('index')
+    contexto = {
+        'form': form
+    }
+    return render(request, 'forms/forms.html', contexto)
 
 def autenticacao(request):
     if request.method == 'POST':

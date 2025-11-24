@@ -1,11 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-class Usuario(AbstractUser):
-    cpf = models.CharField('CPF', max_length=11)
-    nome_completo = models.CharField('Nome_completo', max_length=50)
-    
-
 """ MODELAGENS DO PROJETO SÃO JORGE SUPLEMENTOS"""
 
 class Produto(models.Model):
@@ -18,7 +13,7 @@ class Produto(models.Model):
     imagem = models.ImageField(upload_to='produtos/')
     fornecedor = models.ForeignKey('Fornecedor', on_delete=models.PROTECT)
 
-class cliente(models.Model):
+class Cliente(models.Model):
     nome = models.CharField('Nome', max_length=100)
     senha = models.CharField('Senha', max_length=50)
     email = models.EmailField('Email')
@@ -45,7 +40,6 @@ class Fornecedor(models.Model):
 
     def __str__(self):
         return self.nome
-
 
 """ MODELAGENS DE BRUNO GOMES"""
 
@@ -79,3 +73,8 @@ class Aluno(models.Model):
     nome = models.TextField('Nome')
     email = models.TextField('Email')
     projetos = models.ForeignKey(Projeto, on_delete=models.PROTECT) 
+    
+    """class Usuario(AbstractUser):
+    nome = models.CharField('Nome_completo', max_length=50)
+    senha = models.CharField('Senha', max_length=50)
+    email = models.EmailField('Email')"""

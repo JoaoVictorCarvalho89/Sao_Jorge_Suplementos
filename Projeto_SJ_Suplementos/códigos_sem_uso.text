@@ -1,2 +1,0 @@
-<!-- {% if user.is_superuser and user.is_authenticated %} -->
-        <!-- {% endif %} -->
