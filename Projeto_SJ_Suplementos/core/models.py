@@ -23,7 +23,7 @@ class Cliente(models.Model):
 class Pedido(models.Model):
     data_pedido = models.DateField('Data_Pedido', auto_now_add=True)
     valor = models.FloatField('Valor')
-    cliente = models.ForeignKey(cliente, on_delete=models.PROTECT)
+    cliente = models.ForeignKey(Cliente, on_delete=models.PROTECT)
 
 class ItemPedido(models.Model):
     quantidade = models.IntegerField('Quantidade')                       

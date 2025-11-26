@@ -3,8 +3,8 @@ from django.contrib import messages
 
 """ Imports de São Jorge Suplementos """
 
-from .models import Produto, Fornecedor
-from .forms import ProdutoForm, FornecedorForm, ClienteForm
+from .models import Produto, Fornecedor, Cliente #Classes de modelos
+from .forms import ProdutoForm, FornecedorForm, ClienteForm #Classes de formulários
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 

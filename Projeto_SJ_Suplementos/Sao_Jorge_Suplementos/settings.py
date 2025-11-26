@@ -35,13 +35,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # diretório onde a imagem será sa
 # Application definition
 
 INSTALLED_APPS = [
+    'core',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',
 ]
 
 MIDDLEWARE = [
@@ -146,7 +146,7 @@ LOGGING = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'core.Usuario'  
+#AUTH_USER_MODEL = 'core.Usuario'  
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'forms'
