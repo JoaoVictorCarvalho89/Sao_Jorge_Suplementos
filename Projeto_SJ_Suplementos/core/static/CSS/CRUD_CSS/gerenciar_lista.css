@@ -51,8 +51,15 @@ tr, th{
 }
 
 .link {
+    height: auto;
+    width: fit-content;
     display: flex;
-    margin-top: 10px;
+    align-items: center;
     margin-left: 10px;
     gap: 5px;
+}
+
+.link p {
+    margin: 0;
+    padding: 0;
 }

@@ -16,14 +16,14 @@
       <!-- Produtos -->
       <section class="products">
 
-        <div class="product-card_cadastro">
-
-          <img src="{% static 'Imagens/Produtos_genéricos.jpg' %}" alt="Cadastre um produto">
-          <strong><a href="{% url 'produto_cadastro' %}">Cadastre um produto</a></strong>
-          <img src="{% static 'Imagens/Fornecedor_ilustrativo.png' %}" alt="Cadastre um fornecedor">
-          <strong><a href="{% url 'fornecedores' %}" id="fornecedor_link"><p>Fornecedores</p><i class="fa-solid fa-truck"></i></a></strong>
-          
-        </div>
+        {% if user.is_superuser %}
+          <div class="product-card_cadastro">
+            <img src="{% static 'Imagens/Produtos_genéricos.jpg' %}" alt="Cadastre um produto">
+            <strong><a href="{% url 'produto_cadastro' %}">Cadastre um produto</a><i class="fa-solid fa-wine-bottle"></i></strong>
+            <img src="{% static 'Imagens/Fornecedor_ilustrativo.png' %}" alt="Cadastre um fornecedor">
+            <strong><a href="{% url 'fornecedores' %}" id="fornecedor_link"><p>Fornecedores</p><i class="fa-solid fa-truck"></i></a></strong>
+          </div>
+        {% endif %}
 
         {% for produto in lista_produtos %}
           <div class="product-card">
@@ -34,12 +34,22 @@
                 <p>Descrição: {{ produto.descricao }}</p>
                 <p>Categoria: {{ produto.categoria }}</p>
                 <p>Marca: {{ produto.marca }}</p>
-                <p>Fornecedor: {{ produto.fornecedor }}</p>
-                <p><a href="{% url 'produto_editar' produto.id %}">EDITAR</a> | <a href="{% url 'produto_remover' produto.id %}">APAGAR</a></p>
+                {% if not user.is_superuser %}
+                  <a href="#">Comprar</a>
+                {% endif %}
+                {% if user.is_superuser %}
+                  <p>Fornecedor: {{ produto.fornecedor }}</p>
+                  <p><a href="{% url 'produto_editar' produto.id %}">EDITAR</a> | <a href="{% url 'produto_remover' produto.id %}">APAGAR</a></p>
+                {% endif %}
               </strong>
           </div>
           {% empty %}
-          <p>Nenhum produto cadastrado</p>
+            {% if user.is_superuser %}
+              <p>Nenhum produto cadastrado</p>
+            {% else %}
+              <p>Nenhum produto disponível no momento</p>
+            {% endif %}
+            
         {% endfor %}
         
       </section>

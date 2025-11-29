@@ -20,11 +20,11 @@
         <link rel="stylesheet" href="{% static 'CSS/BaseCSS/barra_lateral.css' %}?v={% now 'U' %}">
         <link rel="stylesheet" href="{% static 'CSS/BaseCSS/cabecalho.css' %}?v={% now 'U' %}">
         <link rel="stylesheet" href="{% static 'CSS/BaseCSS/main.css' %}?v={% now 'U' %}">
-        <!--<link rel="stylesheet" href="{% static 'CSS/aba_usuario.css' %}?v={% now 'U' %}">-->
     </head>
 
     <body>
         {% include 'base/cabecalho.html' %}
+        {% block perfil %}{% endblock %}
         {% block dashboard %}{% endblock %}
         {% block index %}{% endblock %}
         {% block sobre_nos %}{% endblock %}

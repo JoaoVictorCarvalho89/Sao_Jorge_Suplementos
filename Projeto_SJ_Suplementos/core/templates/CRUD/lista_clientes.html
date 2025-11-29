@@ -1,0 +1,31 @@
+{% extends 'CRUD/lista_base.html' %}
+{% load static %}
+
+{% block title_clientes %}
+    <title>Clientes</title>
+{% endblock %}
+
+{% block lista_clientes %}
+
+        <h1>Gerenciador de Clientes</h1>
+        <a href="{% url 'forms' %}" class="link">Cadastrar Cliente <i class="fa-solid fa-user"></i></a>
+        <a href="{% url 'PaginaCliente' %}" class="link"><i class="fa fa-arrow-right" style="rotate: 180deg;"></i><p>Voltar</p></a>
+        <table>
+            <tr>
+                <th class="nome">Nome do Cliente</th>
+                <th class="acoes">Ações</th>
+            </tr>
+            {% for cliente in lista_clientes %}
+                <tr>
+                    <td class="nome">{{ cliente.nome }}</td>
+                    <td class="acoes">
+                        <a href="{% url 'cliente_editar' cliente.id %}">EDITAR</a> |
+                            <a href="{% url 'cliente_remover' cliente.id %}">APAGAR</a>
+                        </td>
+                    </tr>
+                {% empty %}
+                <p>Nenhum cliente cadastrado</p>
+            {% endfor %}
+        </table>
+
+{% endblock %}

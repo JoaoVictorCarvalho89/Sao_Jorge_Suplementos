@@ -27,9 +27,11 @@ def index(request):
 def perfil(request):
     return render(request, 'perfil.html')
 
+@login_required
 def base(request):
     return render(request, 'base.html')
 
+@login_required
 def dashboard(request):
     return render(request, 'dashboard.html')
 
@@ -39,6 +41,7 @@ def SobreNos(request):
 def tela_whatsapp(request):
     return render(request, 'tela_whatsapp.html')
 
+@login_required
 def carrinho(request):
     return render(request, 'carrinho.html')
 
@@ -49,6 +52,39 @@ def PaginaCliente(request):
     }
     return render(request, 'PaginaCliente.html', contexto)
 
+#CRUD PRODUTOS, FORNECEDORES E CLIENTES
+
+@login_required
+def lista_base(request):
+    return render(request, 'CRUD/lista_base.html')
+
+@login_required
+def lista_clientes(request):
+    clientes = Cliente.objects.all()
+    contexto = {
+        'lista_clientes': clientes
+    }
+    return render(request, 'CRUD/lista_clientes.html', contexto)
+
+def cliente_editar(request, id):
+    cliente = Cliente.objects.get(pk=id)
+    form = ClienteForm(request.POST or None, instance=cliente)
+    
+    if form.is_valid():
+        form.save()
+        return redirect('lista_clientes')
+    
+    contexto = {
+        'form': form
+    }
+    return render(request, 'CRUD/cliente_cadastro.html', contexto) 
+
+def cliente_remover(request, id):
+    cliente = Cliente.objects.get(pk=id)
+    cliente.delete()
+    return redirect('lista_clientes')
+
+@login_required
 def produto_cadastro(request):
     form = ProdutoForm(request.POST or None, request.FILES or None)
     if form.is_valid():
@@ -78,6 +114,7 @@ def produto_remover(request, id):
     produto.delete()
     return redirect('PaginaCliente')
 
+@login_required
 def fornecedores(request):
     fornecedores = Fornecedor.objects.all()
     contexto = {
@@ -85,6 +122,7 @@ def fornecedores(request):
     }
     return render(request, 'CRUD/fornecedores.html', contexto)
 
+@login_required
 def fornecedor_cadastro(request):
     form = FornecedorForm(request.POST or None)
     if form.is_valid():
@@ -115,6 +153,7 @@ def fornecedor_remover(request, id):
 
 """Formulários"""
 
+@login_required
 def forms_base(request):
     return render(request, 'forms/forms_base.html')
 
@@ -133,13 +172,21 @@ def autenticacao(request):
         nome_user = request.POST['nome']
         senha = request.POST['senha']
         user = authenticate(request, username=nome_user, password=senha, )
-        if user is not None:
+
+        if user is not None and user.is_superuser:
             login(request, user)
             messages.success(request, 'Bem-vindo, ' + nome_user + '!')
             return render(request, 'dashboard.html')
+        
+        elif user is not None:
+            login(request, user)
+            messages.success(request, 'Bem-vindo, ' + nome_user + '!')
+            return render(request, 'index.html')
+        
         else:
             messages.error(request, 'Credenciais inválidas. Tente novamente.')
             return render(request, 'forms/login.html')
+        
     return render(request, 'forms/login.html')
 
 def desconectar(request):
@@ -166,6 +213,7 @@ def barra_lateral(request):
 
 """Página de Testes"""
 
+@login_required
 def teste(request):
     return render(request, 'teste.html')
 

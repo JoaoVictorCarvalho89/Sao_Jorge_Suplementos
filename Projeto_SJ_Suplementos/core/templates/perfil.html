@@ -1,16 +1,35 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-    <head>
+{% extends 'base.html' %}
+{% load static %}
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Perfil</title>
+{% block title_perfil %}
+    <title>Perfil</title>
+    <link rel="stylesheet" href="{% static 'CSS/perfil.css' %}?v={% now 'U' %}">
+{% endblock %}
 
-    </head>
-    <body>
+{% block perfil %}
 
-        <h1>Perfil</h1>
+    <main>
 
-    </body>
-    
-</html>
+        {% include 'base/barra_lateral.html' %}
+        <div class="main-content">
+
+            <strong><p>Perfil do Usuário</p></strong>
+            <section class="profile-details">
+                <div class="detail">
+                    <h3>Nome:</h3>
+                    <p>João Silva</p>
+                </div>
+                <div class="detail">
+                    <h3>Email:</h3>
+                    <p>joao.silva@example.com</p>
+                </div>
+                <div class="detail">
+                    <h3>Telefone:</h3>
+                    <p>(11) 91234-5678</p>
+                </div>
+            </section>
+        </div>
+        
+    </main>
+
+{% endblock %}

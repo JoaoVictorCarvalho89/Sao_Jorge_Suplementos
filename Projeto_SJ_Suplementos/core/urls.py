@@ -6,7 +6,7 @@ from django.urls import path, include
 from .views import index, base, perfil, SobreNos, tela_whatsapp, carrinho, PaginaCliente, teste #Páginas principais
 from .views import forms, autenticacao, desconectar, recuperar_senha, dashboard, forms_base #Formulários 
 from .views import produto_cadastro, produto_editar, produto_remover #Crud de Produtos
-from .views import fornecedores, fornecedor_cadastro, fornecedor_editar, fornecedor_remover #Crud de Fornecedores
+from .views import fornecedores, fornecedor_cadastro, fornecedor_editar, fornecedor_remover, lista_clientes, cliente_editar, cliente_remover #Crud de Fornecedores
 from .views import cabecalho, footer, main, barra_lateral #Elementos de Layout
 from .views import categorias, areas, area_cadastro, area_remover, area_editar, publicos, publico_cadastro, publico_editar, publico_remover, instrutores, instrutor_cadastro, instrutor_editar, instrutor_remover #Páginas de Bruno Gomes
 
@@ -37,6 +37,13 @@ urlpatterns = [
     path('fornecedor_cadastro/', fornecedor_cadastro, name='fornecedor_cadastro'),
     path('fornecedor_editar/<int:id>/', fornecedor_editar, name='fornecedor_editar'),
     path('fornecedor_remover/<int:id>/', fornecedor_remover, name='fornecedor_remover'),
+
+
+    # Clientes
+    
+    path('lista_clientes/', lista_clientes, name='lista_clientes'),
+    path('cliente_editar/<int:id>/', cliente_editar, name='cliente_editar'),
+    path('cliente_remover/<int:id>/', cliente_remover, name='cliente_remover'),
 
     # Elementos de Layout
 
