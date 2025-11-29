@@ -10,7 +10,7 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-    margin-left: 60px;
+    margin-left: var(--espacamento_entre_conteudo_e_barra);
 }
 
 .cards{

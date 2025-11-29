@@ -17,7 +17,8 @@
     --color_icon: white;
     --card_bg: #535353;
     --margin_top_sobre_nos: 30px;
-    --alinhamento_barra_e_main: 2%;
+    --alinhamento_barra_e_main: 30px;
+    --espacamento_entre_conteudo_e_barra: 90px;
 }
 
 ::selection{

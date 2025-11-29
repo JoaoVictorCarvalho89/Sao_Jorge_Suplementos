@@ -28,7 +28,7 @@ class ClienteForm(forms.ModelForm):
             }),
             'endereço': forms.Textarea(attrs={
                 'class': 'input-field',
-                'placeholder': 'Endereço'
+                'placeholder': 'Estado, Cidade, Bairro, Rua, Nº ou S/N'
             })
         }
 

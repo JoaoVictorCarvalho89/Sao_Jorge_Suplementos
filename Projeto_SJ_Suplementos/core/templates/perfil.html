@@ -11,25 +11,58 @@
     <main>
 
         {% include 'base/barra_lateral.html' %}
-        <div class="main-content">
-
-            <strong><p>Perfil do Usuário</p></strong>
+        <div class="container">
             <section class="profile-details">
+
+                <strong><h1>Perfil do Usuário</h1></strong>
                 <div class="detail">
                     <h3>Nome:</h3>
-                    <p>João Silva</p>
+                    <p>{{ user.username }}</p>
                 </div>
                 <div class="detail">
                     <h3>Email:</h3>
-                    <p>joao.silva@example.com</p>
+                    <p>{{ user.email }}</p>
                 </div>
                 <div class="detail">
                     <h3>Telefone:</h3>
-                    <p>(11) 91234-5678</p>
+                    <p>{{ user.profile.telefone }}</p>
                 </div>
+                <div class="detail">
+                    <h3>Aniversário:</h3>
+                    <p>{{ user.profile.aniversario }}</p>
+                </div>
+
+            </section>
+            <section class="registros_de_pedidos">
+
+                <table>
+                    <caption><strong><h2>Registros de Pedidos</h2></strong></caption>
+                    <thead>
+                        <tr>
+                            <th>ID do Pedido</th>
+                            <th>Data do Pedido</th>
+                            <th>Status</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for pedido in pedidos %}
+                            <tr>
+                                <td>pedido</td>
+                                <td>pedido_data_pedido</td>
+                                <td>pedido_status</td>
+                                <td>pedido_total</td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                <td colspan="4">Nenhum pedido encontrado.</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
             </section>
         </div>
-        
     </main>
 
 {% endblock %}
