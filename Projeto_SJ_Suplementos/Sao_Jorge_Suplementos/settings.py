@@ -123,8 +123,6 @@ STATIC_URL = 'static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
-import logging
-
 import time
 VERSION = str(int(time.time()))
 
@@ -146,7 +144,7 @@ LOGGING = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#AUTH_USER_MODEL = 'core.Usuario'  
+AUTH_USER_MODEL = 'core.Cliente'  
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'forms'

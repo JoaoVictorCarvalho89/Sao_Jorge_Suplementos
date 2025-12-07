@@ -8,11 +8,6 @@ from .forms import ProdutoForm, FornecedorForm, ClienteForm #Classes de formulá
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
-""" Imports de Bruno Gomes """
-
-from .models import Area, Publico, Instrutor
-from .forms import AreaForm, PublicoForm, InstrutorForm#, UsuarioForm
-
 import logging
 
 logger = logging.getLogger('django.template')
@@ -161,11 +156,14 @@ def forms(request):
     form = ClienteForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('index')
-    contexto = {
-        'form': form
-    }
-    return render(request, 'forms/forms.html', contexto)
+        nome_user = request.POST['username']
+        senha = request.POST['password1']
+        user = authenticate(request, username=nome_user, password=senha)
+
+        login(request, user)
+        messages.success(request, 'Bem-vindo, ' + nome_user + '!')
+        return redirect('PaginaCliente')
+    return render(request, 'forms/forms.html', {'form': form})
 
 def autenticacao(request):
     if request.method == 'POST':
@@ -217,113 +215,3 @@ def barra_lateral(request):
 def teste(request):
     return render(request, 'teste.html')
 
-"""CRUD ÁREAS, PÚBLICOS E INSTRUTORES (SOMENTE AULAS DE BRUNO GOMES)"""
-
-def categorias(request):
-    return render(request, 'Bruno_Gomes/categorias.html')
-
-def areas(request):
-    areas = Area.objects.all()
-    contexto = {
-        'lista_areas': areas
-    }
-    return render(request, 'Bruno_Gomes/areas.html', contexto)
-
-def area_cadastro(request):
-    form = AreaForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        return redirect('areas')
-    contexto = {
-        'form': form
-    }
-    return render(request, 'Bruno_Gomes/area_cadastro.html', contexto)
-
-def area_editar(request, id):
-    area = Area.objects.get(pk=id)
-    form = AreaForm(request.POST or None, instance=area)
-    
-    if form.is_valid():
-        form.save()
-        return redirect('areas')
-    
-    contexto = {
-        'form': form
-    }
-
-    return render(request, 'Bruno_Gomes/area_cadastro.html', contexto)
-
-def area_remover(request, id):
-    area = Area.objects.get(pk=id)
-    area.delete()
-    return redirect('areas')
-
-def publicos(request):
-    publico = Publico.objects.all()
-    contexto = {
-        'lista_publicos': publico
-    }
-    return render(request, 'Bruno_Gomes/publicos.html', contexto)
-
-def publico_cadastro(request):
-    form = PublicoForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        return redirect('publicos')
-    contexto = {
-        'form': form
-    }
-    return render(request, 'Bruno_Gomes/publico_cadastro.html', contexto)
-
-def publico_editar(request, id):
-    publico = Publico.objects.get(pk=id)
-    form = PublicoForm(request.POST or None, instance=publico)
-    
-    if form.is_valid():
-        form.save()
-        return redirect('publicos')
-    
-    contexto = {
-        'form': form
-    }
-    return render(request, 'Bruno_Gomes/publico_cadastro.html', contexto)
-
-def publico_remover(request, id):
-    publico = Publico.objects.get(pk=id)
-    publico.delete()
-    return redirect('publicos')
-
-def instrutores(request):
-    instrutor = Instrutor.objects.all()
-    contexto = {
-        'lista_instrutor': instrutor
-    }
-    return render(request, 'Bruno_Gomes/instrutores.html', contexto)
-
-def instrutor_cadastro(request):
-    form = InstrutorForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        return redirect('instrutores')
-    contexto = {
-        'form': form
-    }
-    return render(request, 'Bruno_Gomes/instrutor_cadastro.html', contexto)
-
-def instrutor_editar(request, id):
-    instrutor = Instrutor.objects.get(pk=id)
-    form = InstrutorForm(request.POST or None, instance=instrutor)
-    
-    if form.is_valid():
-        form.save()
-        return redirect('instrutores')
-    
-    contexto = {
-        'form': form
-    }
-    return render(request, 'Bruno_Gomes/instrutor_cadastro.html', contexto)
-
-def instrutor_remover(request, id):
-    instrutor = Instrutor.objects.get(pk=id)
-    instrutor.delete()
-    return redirect('instrutores')

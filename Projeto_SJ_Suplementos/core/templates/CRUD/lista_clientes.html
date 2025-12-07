@@ -17,10 +17,9 @@
             </tr>
             {% for cliente in lista_clientes %}
                 <tr>
-                    <td class="nome">{{ cliente.nome }}</td>
+                    <td class="nome">{{ cliente.username }}</td>
                     <td class="acoes">
-                        <a href="{% url 'cliente_editar' cliente.id %}">EDITAR</a> |
-                            <a href="{% url 'cliente_remover' cliente.id %}">APAGAR</a>
+                        <a href="{% url 'cliente_remover' cliente.id %}">APAGAR</a>
                         </td>
                     </tr>
                 {% empty %}

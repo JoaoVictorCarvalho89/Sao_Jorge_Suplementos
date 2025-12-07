@@ -8,7 +8,6 @@ from .views import forms, autenticacao, desconectar, recuperar_senha, dashboard,
 from .views import produto_cadastro, produto_editar, produto_remover #Crud de Produtos
 from .views import fornecedores, fornecedor_cadastro, fornecedor_editar, fornecedor_remover, lista_clientes, cliente_editar, cliente_remover #Crud de Fornecedores
 from .views import cabecalho, footer, main, barra_lateral #Elementos de Layout
-from .views import categorias, areas, area_cadastro, area_remover, area_editar, publicos, publico_cadastro, publico_editar, publico_remover, instrutores, instrutor_cadastro, instrutor_editar, instrutor_remover #Páginas de Bruno Gomes
 
 urlpatterns = [
 
@@ -63,22 +62,6 @@ urlpatterns = [
     path('autenticacao/', autenticacao, name='login'),
     path('desconectar/', desconectar, name='desconectar'),
     path('recuperar_senha/', recuperar_senha, name='recuperar_senha'),
-
-    # ÁREAS, PÚBLICOS E INSTRUTORES (SOMENTE AULAS DE BRUNO GOMES)
-
-    path('categorias/', categorias, name='categorias'),
-    path('areas/', areas, name='areas'),
-    path('publicos/', publicos, name='publicos'),
-    path('instrutores/', instrutores, name='instrutores'),
-    path('area_cadastro/', area_cadastro, name='area_cadastro'),
-    path('area_editar/<int:id>/', area_editar, name='area_editar'),
-    path('area_remover/<int:id>/', area_remover, name='area_remover'),
-    path('publico_cadastro/', publico_cadastro, name='publico_cadastro'),
-    path('publico_editar/<int:id>/', publico_editar, name='publico_editar'),
-    path('publico_remover/<int:id>/', publico_remover, name='publico_remover'),
-    path('instrutor_cadastro/', instrutor_cadastro, name='instrutor_cadastro'),
-    path('instrutor_editar/<int:id>/', instrutor_editar, name='instrutor_editar'),
-    path('instrutor_remover/<int:id>/', instrutor_remover, name='instrutor_remover'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -1,22 +1,17 @@
 from django import forms 
-from .models import Produto, Fornecedor, Cliente # MODELAGENS DO PROJETO SÃO JORGE SUPLEMENTOS 
-from .models import Area, Publico, Instrutor, Curso, Categoria, Projeto, Aluno# MODELAGENS DE BRUNO GOMES
+from .models import Cliente, Produto, Fornecedor # MODELAGENS DO PROJETO SÃO JORGE SUPLEMENTOS 
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 """CLASSES DO PROJETO SÃO JORGE SUPLEMENTOS"""
 
-class ClienteForm(forms.ModelForm):
+class ClienteForm(UserCreationForm):
     class Meta:
         model = Cliente
-        fields = ['nome', 'senha', 'email', 'telefone', 'endereço']
+        fields = ['username', 'email', 'telefone', 'endereço']
         widgets = {
-            'nome': forms.TextInput(attrs={
+            'username': forms.TextInput(attrs={
                 'class': 'input-field',
                 'placeholder': 'Nome completo'
-            }),
-            'senha': forms.PasswordInput(attrs={
-                'class': 'input-field',
-                'placeholder': 'Senha'
             }),
             'email': forms.EmailInput(attrs={
                 'class': 'input-field',
@@ -26,7 +21,7 @@ class ClienteForm(forms.ModelForm):
                 'class': 'input-field',
                 'placeholder': 'Telefone'
             }),
-            'endereço': forms.Textarea(attrs={
+            'endereço': forms.TextInput(attrs={
                 'class': 'input-field',
                 'placeholder': 'Estado, Cidade, Bairro, Rua, Nº ou S/N'
             })
@@ -67,43 +62,3 @@ class FornecedorForm(forms.ModelForm):
         model = Fornecedor
         fields = ['nome']
         
-""" CLASSES DE BRUNO GOMES"""
-
-class AreaForm(forms.ModelForm):
-    class Meta:
-        model = Area
-        fields = ['nome']
-        
-class InstrutorForm(forms.ModelForm):
-    class Meta:
-        model = Instrutor
-        fields = ['nome']
-        
-class PublicoForm(forms.ModelForm):
-    class Meta:
-        model = Publico
-        fields = ['nome']
-        
-"""class UsuarioForm(forms.ModelForm):
-    class Meta:
-        model = Usuario
-        fields = ['nome', 'email', 'senha', 'confirme_senha']
-        widgets = {
-            'username_completo': forms.TextInput(attrs={
-                'class': 'input-field',
-                'placeholder': 'Nome de usuário'
-            }),
-            'email': forms.EmailInput(attrs={
-                'class': 'input-field',
-                'placeholder': 'Email'
-            }),
-            'senha': forms.PasswordInput(attrs={
-                'class': 'input-field',
-                'placeholder': 'Senha'
-            }),
-            'confirme_senha': forms.PasswordInput(attrs={
-                'class': 'input-field',
-                'placeholder': 'Confirme a senha'
-            })
-        }"""
-
