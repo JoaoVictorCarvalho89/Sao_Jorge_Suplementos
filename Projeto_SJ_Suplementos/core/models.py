@@ -19,7 +19,8 @@ class Cliente(AbstractUser):
     senha = models.CharField('Password', max_length=50)
     email = models.EmailField('Email')
     telefone = models.CharField('Telefone', max_length=15)
-    endereço = models.TextField('Endereço')
+    endereco = models.TextField('Endereco', null=True, blank=True)
+    aniversario = models.DateField('Aniversario', null=True, blank=True)
 
     def __str__(self):
         return self.username

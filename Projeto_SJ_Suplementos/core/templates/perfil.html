@@ -25,11 +25,27 @@
                 </div>
                 <div class="detail">
                     <h3>Telefone:</h3>
-                    <p>{{ user.profile.telefone }}</p>
+                    {% if user.telefone %}
+                        <p>{{ user.telefone }}</p>
+                    {% else %}
+                        <p>Telefone não informado. Por favor, acrescente suas informações para melhorar sua experiência!</p>
+                    {% endif %}
                 </div>
                 <div class="detail">
                     <h3>Aniversário:</h3>
-                    <p>{{ user.profile.aniversario }}</p>
+                    {% if user.aniversario %}
+                        <p>{{ user.aniversario }}</p>
+                    {% else %}
+                        <p>Aniversário não informado. Por favor, acrescente suas informações para melhorar sua experiência!</p>
+                    {% endif %}
+                </div>
+                <div class="detail">
+                    <h3>Endereço:</h3>
+                    {% if user.endereco %}
+                        <p>{{ user.endereco }}</p>
+                    {% else %}
+                        <p>Endereço não informado. Por favor, acrescente suas informações para melhorar sua experiência!</p>
+                    {% endif %}
                 </div>
 
             </section>

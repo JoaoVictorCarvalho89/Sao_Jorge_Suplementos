@@ -7,7 +7,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 class ClienteForm(UserCreationForm):
     class Meta:
         model = Cliente
-        fields = ['username', 'email', 'telefone', 'endereço']
+        fields = ['username', 'email', 'telefone', 'endereco', 'aniversario']
         widgets = {
             'username': forms.TextInput(attrs={
                 'class': 'input-field',
@@ -21,9 +21,13 @@ class ClienteForm(UserCreationForm):
                 'class': 'input-field',
                 'placeholder': 'Telefone'
             }),
-            'endereço': forms.TextInput(attrs={
+            'endereco': forms.TextInput(attrs={
                 'class': 'input-field',
                 'placeholder': 'Estado, Cidade, Bairro, Rua, Nº ou S/N'
+            }),
+            'aniversario': forms.DateInput(attrs={
+                'class': 'input-field',
+                'type': 'date'
             })
         }
 
